@@ -1,0 +1,68 @@
+--1.Totalul cartilor imprumutate si calcularea penalizarilor totale pt fiecare cititor.
+
+SELECT 
+    c.id_cititor,
+    c.nume_cititor,
+    COALESCE(SUM(p.valoare_penalizare), 0) AS total_penalizari,
+    COALESCE(SUM(i.nr_carti_imprumutate), 0) AS total_carti_imprumutate
+FROM 
+    Cititori c
+LEFT JOIN 
+    Penalizari p ON c.id_cititor = p.id_cititor
+LEFT JOIN 
+    Imprumuturi i ON c.id_cititor = i.id_cititor
+GROUP BY 
+    c.id_cititor, c.nume_cititor
+ORDER BY 
+    total_penalizari DESC;
+
+--2. SQL: Găsește editurile care au publicat cele mai multe cărți și suma totală a ratingurilor acestora
+SELECT 
+    e.id_editura,
+    e.nume_editura,
+    COUNT(c.id_carte) AS numar_carti_publicate,
+    COALESCE(AVG(c.rating_carte), 0) AS media_ratinguri
+FROM 
+    Edituri e
+LEFT JOIN 
+    Carti c ON e.id_editura = c.id_editura
+GROUP BY 
+    e.id_editura, e.nume_editura
+ORDER BY 
+    numar_carti_publicate DESC, media_ratinguri DESC;
+
+--3.Afișează numărul de cărți afectate și cel mai frecvent tip de afectare pentru fiecare cititor
+SELECT 
+    c.id_cititor,
+    c.nume_cititor,
+    COUNT(ca.id_carte_afectata) AS numar_carti_afectate,
+    (
+        SELECT tip_afectare
+        FROM Carti_Afectate ca2
+        WHERE ca2.id_cititor = c.id_cititor
+        GROUP BY tip_afectare
+        ORDER BY COUNT(*) DESC
+        LIMIT 1
+    ) AS tip_afectare_frecvent
+FROM 
+    Cititori c
+INNER JOIN 
+    Carti_Afectate ca ON c.id_cititor = ca.id_cititor
+GROUP BY 
+    c.id_cititor, c.nume_cititor
+ORDER BY 
+    numar_carti_afectate DESC;
+---4.Distribuția angajaților și analiza salariilor pe funcții
+
+SELECT 
+    functie,
+    COUNT(*) AS numar_angajati,
+    MIN(salariu) AS salariu_minim,
+    MAX(salariu) AS salariu_maxim,
+    AVG(salariu) AS salariu_mediu
+FROM 
+    Angajati
+GROUP BY 
+    functie
+ORDER BY 
+    numar_angajati DESC, salariu_mediu DESC;

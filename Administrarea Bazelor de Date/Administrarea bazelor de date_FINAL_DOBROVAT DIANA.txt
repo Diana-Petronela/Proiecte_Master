@@ -1,0 +1,418 @@
+-- PARTEA 1 PROIECT ADB PENTRU O FARMACIE --
+
+SELECT file_name
+FROM dba_data_files;
+
+--Creare tablespace pentru date
+
+CREATE TABLESPACE farmacie_date
+DATAFILE '/u01/app/oracle/oradata/MYDB/datafile/farmacie_date01.dbf' SIZE 200M
+EXTENT MANAGEMENT LOCAL
+SEGMENT SPACE MANAGEMENT AUTO;
+
+--CREATE TABLESPACE faramcie_index
+ 
+CREATE TABLESPACE farmacie_index
+DATAFILE '/u01/app/oracle/oradata/MYDB/datafile/farmacie_index01.dbf' SIZE 100M
+EXTENT MANAGEMENT LOCAL
+SEGMENT SPACE MANAGEMENT AUTO;
+
+-- Creare utilizator (schema aplicației)
+CREATE USER farmacie IDENTIFIED BY farmacie
+DEFAULT TABLESPACE farmacie_date
+TEMPORARY TABLESPACE temp;
+
+-- Acordare permisiuni de bază
+GRANT CONNECT, RESOURCE TO farmacie;
+
+-- Acordare acces la cele două tablespace-uri create
+ALTER USER farmacie QUOTA UNLIMITED ON farmacie_date;
+ALTER USER farmacie QUOTA UNLIMITED ON farmacie_index;
+
+
+--tabel IOT
+CREATE TABLE Pacienti (
+  CNP VARCHAR2(13) PRIMARY KEY,
+  Nume VARCHAR2(100),
+  DataNasterii DATE,
+  Telefon VARCHAR2(15)
+)
+ORGANIZATION INDEX
+TABLESPACE farmacie_date;
+
+--tabel normal
+CREATE TABLE Medicamente (
+  IDMedicament NUMBER PRIMARY KEY,
+  Denumire VARCHAR2(100),
+  Stoc NUMBER,
+  Pret NUMBER(6,2),
+  DataExpirare DATE
+)
+TABLESPACE farmacie_date;
+
+
+--tabel partajat
+CREATE TABLE Vanzari (
+  IDVanzare NUMBER PRIMARY KEY,
+  CNP VARCHAR2(13),
+  DataVanzare DATE,
+  Total NUMBER(10,2),
+  FOREIGN KEY (CNP) REFERENCES Pacienti(CNP)
+)
+PARTITION BY RANGE (DataVanzare) (
+  PARTITION vanzari_2022 VALUES LESS THAN (TO_DATE('2023-01-01','YYYY-MM-DD')),
+  PARTITION vanzari_2023 VALUES LESS THAN (TO_DATE('2024-01-01','YYYY-MM-DD')),
+  PARTITION vanzari_2024 VALUES LESS THAN (MAXVALUE)
+)
+TABLESPACE farmacie_date;
+
+
+--tabel in Cluster
+-- am creat clusterul
+CREATE CLUSTER ClusterVanzari (IDVanzare NUMBER)
+  HASHKEYS 1000
+  TABLESPACE farmacie_date;
+  
+  -- Creezi tabelul în cluster
+  
+  CREATE TABLE DetaliiVanzare (
+  IDVanzare NUMBER,
+  IDMedicament NUMBER,
+  Cantitate NUMBER,
+  PretUnitar NUMBER(6,2),
+  PRIMARY KEY (IDVanzare, IDMedicament),
+  FOREIGN KEY (IDVanzare) REFERENCES Vanzari(IDVanzare),
+  FOREIGN KEY (IDMedicament) REFERENCES Medicamente(IDMedicament)
+)
+CLUSTER ClusterVanzari(IDVanzare);
+
+
+-- Populare tabel Pacienti
+BEGIN
+  FOR i IN 1..100 LOOP
+    INSERT INTO Pacienti (
+      CNP, Nume, DataNasterii, Telefon
+    ) VALUES (
+      TO_CHAR(6200000000000 + i), -- CNP fictiv
+      'Pacient_' || i,
+      TO_DATE('1970-01-01', 'YYYY-MM-DD') + DBMS_RANDOM.VALUE(6000, 20000),
+      '07' || TRUNC(DBMS_RANDOM.VALUE(10000000, 99999999))
+    );
+  END LOOP;
+  COMMIT;
+END;
+/
+
+--Populare tabel Medicamente
+BEGIN
+  FOR i IN 1..1000 LOOP
+    INSERT INTO Medicamente (
+      IDMedicament, Denumire, Stoc, Pret, DataExpirare
+    ) VALUES (
+      i,
+      'Medicament_' || i,
+      TRUNC(DBMS_RANDOM.VALUE(10, 1000)),
+      ROUND(DBMS_RANDOM.VALUE(5, 200), 2),
+      SYSDATE + TRUNC(DBMS_RANDOM.VALUE(30, 365*3))
+    );
+  END LOOP;
+  COMMIT;
+END;
+/
+
+--Populare tabel Vanzari
+BEGIN
+  FOR i IN 1..10000 LOOP
+    INSERT INTO Vanzari (
+      IDVanzare, CNP, DataVanzare, Total
+    ) VALUES (
+      i,
+      TO_CHAR(6200000000000 + MOD(i, 100) + 1),
+      SYSDATE - TRUNC(DBMS_RANDOM.VALUE(0, 730)), -- vânzări din ultimii 2 ani
+      0 -- vom actualiza totalul după ce populăm DetaliiVanzare
+    );
+  END LOOP;
+  COMMIT;
+END;
+/
+
+--Populare tabel DetaliiVanzare
+
+
+
+CREATE SEQUENCE seq_vanzare START WITH 1 INCREMENT BY 1 NOCACHE;
+
+SELECT IDVanzare
+INTO v_vanz
+FROM (
+  SELECT IDVanzare
+  FROM Vanzari
+  ORDER BY dbms_random.value
+)
+WHERE ROWNUM = 1;
+
+DECLARE
+  v_vanz     NUMBER;
+  v_med      NUMBER;
+  v_cant     NUMBER;
+  v_pret     NUMBER;
+BEGIN
+  FOR i IN 1..20000 LOOP
+    -- Alegem un IDVanzare valid aleator
+    SELECT IDVanzare 
+      INTO v_vanz
+    FROM (
+      SELECT IDVanzare FROM Vanzari ORDER BY DBMS_RANDOM.VALUE
+    )
+    WHERE ROWNUM = 1;
+    
+      -- Valorile asociate detaliilor
+    v_med   := TRUNC(DBMS_RANDOM.VALUE(1, 1000));
+    v_cant  := TRUNC(DBMS_RANDOM.VALUE(1, 5));
+    v_pret  := ROUND(DBMS_RANDOM.VALUE(5, 200), 2);
+    
+     -- Inserează doar dacă combinația nu există deja
+    MERGE INTO DetaliiVanzare tgt
+    USING (SELECT v_vanz AS idv, v_med AS idm FROM dual) src
+      ON (tgt.IDVanzare = src.idv AND tgt.IDMedicament = src.idm)
+    WHEN NOT MATCHED THEN
+      INSERT (IDVanzare, IDMedicament, Cantitate, PretUnitar)
+      VALUES (v_vanz, v_med, v_cant, v_pret);
+  END LOOP;
+  COMMIT;
+END;
+/
+
+--Calculăm totalul pentru fiecare vânzare
+MERGE INTO Vanzari v
+USING (
+  SELECT IDVanzare, SUM(Cantitate * PretUnitar) AS TotalNou
+  FROM DetaliiVanzare
+  GROUP BY IDVanzare
+) d
+ON (v.IDVanzare = d.IDVanzare)
+WHEN MATCHED THEN
+  UPDATE SET v.Total = d.TotalNou;
+  
+  
+  MERGE INTO Vanzari v
+USING (
+  SELECT 
+    IDVanzare, 
+    SUM(Cantitate * PretUnitar) AS total_calculat
+  FROM DetaliiVanzare
+  GROUP BY IDVanzare
+) d
+ON (v.IDVanzare = d.IDVanzare)
+WHEN MATCHED THEN
+  UPDATE SET v.Total = d.total_calculat;
+
+
+-- PARTEA A 2A PROIECT ADB DB PENTRU Farmacie --
+
+--INTEROGARI 
+
+
+--Fara optimizare
+SELECT * FROM Vanzari WHERE CNP = '6200000000041';
+--Optimizare index B‑Tree
+CREATE INDEX idx_vanzari_cnp ON Vanzari(CNP) TABLESPACE farmacie_index;
+
+
+--Fara optimizare
+SELECT TRUNC(DataVanzare) AS Zi, SUM(Total)
+FROM Vanzari
+GROUP BY TRUNC(DataVanzare)
+ORDER BY Zi;
+--Optimizare
+CREATE INDEX idx_vanzari_data_trunc ON Vanzari(TRUNC(DataVanzare)) TABLESPACE farmacie_index;
+
+--Fara optimizare
+SELECT v.IDVanzare, v.CNP, v.DataVanzare, d.IDMedicament, d.Cantitate, d.PretUnitar
+FROM Vanzari v
+JOIN DetaliiVanzare d
+  ON v.IDVanzare = d.IDVanzare
+WHERE v.CNP = '6200000000041';
+
+--Optimizare hint(hash)
+SELECT /*+ USE_HASH(d) */ 
+       v.IDVanzare, v.CNP, v.DataVanzare,
+       d.IDMedicament, d.Cantitate, d.PretUnitar
+FROM Vanzari v
+JOIN DetaliiVanzare d
+  ON v.IDVanzare = d.IDVanzare
+WHERE v.CNP = '62000000000041';
+
+--4.
+GRANT QUERY REWRITE TO farmacie;
+
+GRANT CREATE MATERIALIZED VIEW TO farmacie;
+
+GRANT CREATE TABLE TO farmacie;
+GRANT GLOBAL QUERY REWRITE TO farmacie;
+
+--Fara optimizare
+SELECT TRUNC(v.DataVanzare) zi,
+       SUM(d.Cantitate * d.PretUnitar) total_valoare
+FROM Vanzari v
+JOIN DetaliiVanzare d ON v.IDVanzare = d.IDVanzare
+WHERE d.IDMedicament = 100
+GROUP BY TRUNC(v.DataVanzare)
+ORDER BY zi;
+
+
+--Optimizare MATERIALIZED VIEW
+
+
+CREATE MATERIALIZED VIEW LOG ON Vanzari
+  WITH ROWID, SEQUENCE (IDVanzare, DataVanzare, Total)
+  INCLUDING NEW VALUES;
+
+CREATE MATERIALIZED VIEW LOG ON DetaliiVanzare
+  WITH ROWID, SEQUENCE (IDVanzare, IDMedicament, Cantitate, PretUnitar)
+  INCLUDING NEW VALUES;
+
+
+
+
+CREATE MATERIALIZED VIEW mv_farmacied
+  TABLESPACE farmacie_index
+  BUILD IMMEDIATE
+  REFRESH FAST ON COMMIT
+  ENABLE QUERY REWRITE
+AS
+  SELECT v.IDVanzare,
+         TRUNC(v.DataVanzare) AS zi,
+         SUM(d.Cantitate * d.PretUnitar) AS total_zilnic
+  FROM Vanzari v
+  JOIN DetaliiVanzare d ON v.IDVanzare = d.IDVanzare
+  GROUP BY v.IDVanzare, TRUNC(v.DataVanzare);
+
+
+SELECT /*+ REWRITE(mv_farmacied) */
+       zi, total_zilnic
+FROM mv_farmacied
+WHERE zi BETWEEN DATE '2025-01-01' AND DATE '2025-06-01'
+ORDER BY zi;
+
+
+-- PARTEA a 3a PROIECT ADB DB PENTRU Farmacie--
+
+-- Implementarea componentei de securitate la nivel de bază de date
+-- Identificarea principalelor tipuri de utilizatori și privilegiile necesare
+-- Vom crea trei tipuri de utilizatori: admin, farmacist, client;
+
+--Creare roluri
+CREATE ROLE rol_admin;
+CREATE ROLE rol_farmacist;
+CREATE ROLE rol_client;
+
+--Acordare Privilegii pe Tabele :
+-- Administrator (rol_admin)
+GRANT ALL ON farmacie.vanzari TO rol_admin;
+GRANT ALL ON farmacie.detaliivanzare TO rol_admin;
+GRANT ALL ON farmacie.medicamente TO rol_admin;
+GRANT ALL ON farmacie.pacienti TO rol_admin;
+
+--Farmacist (rol_farmacist)
+GRANT SELECT, INSERT, UPDATE ON farmacie.vanzari TO rol_farmacist;
+GRANT SELECT, INSERT, UPDATE ON farmacie.detaliivanzare TO rol_farmacist;
+GRANT SELECT ON farmacie.medicamente TO rol_farmacist;
+
+--Client (rol_client)
+GRANT SELECT ON farmacie.vanzari TO rol_client;
+GRANT SELECT ON farmacie.detaliivanzare TO rol_client;
+
+--Creare Utilizatori și Atribuire Roluri
+CREATE USER admin_farmacie IDENTIFIED BY admin123;
+GRANT CREATE SESSION TO admin_farmacie;
+GRANT rol_admin TO admin_farmacie;
+
+CREATE USER farmacist_farmacie IDENTIFIED BY pharma123;
+GRANT CREATE SESSION TO farmacist_farmacie;
+GRANT rol_farmacist TO farmacist_farmacie;
+
+CREATE USER client_farmacie IDENTIFIED BY client123;
+GRANT CREATE SESSION TO client_farmacie;
+GRANT rol_client TO client_farmacie;
+
+--Audit
+ALTER SYSTEM SET audit_trail = DB, EXTENDED SCOPE = SPFILE;
+
+SHUTDOWN IMMEDIATE;
+STARTUP;
+
+AUDIT INSERT, UPDATE, DELETE ON farmacie.vanzari;
+
+CONNECT farmacist_farmacie/pharma123;
+
+--Test: executarea acțiunilor care vor fi auditate
+INSERT INTO farmacie.vanzari (idvanzare, cnp, datavanzare, total)
+VALUES (999999, '6200000001100', SYSDATE, 99);
+COMMIT;
+
+UPDATE farmacie.vanzari
+SET total = 119
+WHERE idvanzare = 999999;
+
+COMMIT;
+
+--Verificare Audit
+CONNECT / AS SYSDBA;
+
+SELECT username, action_name, obj_name, timestamp
+FROM dba_audit_trail
+WHERE obj_name = 'VANZARI'
+ORDER BY timestamp DESC;
+
+--Partea a 4-a: Backup și Recuperare (Recovery)--
+
+--RPO (Recovery Point Objective): 24 de ore – putem pierde datele din ultima zi.
+--RTO (Recovery Time Objective): 2 ore – trebuie să restaurăm baza în cel mult 2 ore.
+
+--Strategia de backup
+--  -- Backup complet: Realizat săptămânal (duminica la ora 2:00 AM).
+--  -- Backup incremental: Realizat zilnic (la ora 2:00 AM, în zilele de luni până sâmbătă).
+--  -- Backup arhivă redo log: Realizat la fiecare oră pentru a captura modificările în timp real.
+--Retenția backup-urilor
+--  -- Backup-urile complete vor fi păstrate timp de 4 săptămâni.
+--  -- Backup-urile incrementale vor fi păstrate timp de 1 săptămână.
+--  -- Jurnalele de arhivă vor fi păstrate timp de 1 săptămână.
+-- RPO (Recovery Point Objective): 24 de ore
+-- Deoarece farmacia operează cu vânzări zilnice și date despre stocuri și pacienți, este acceptabil să pierdem cel mult o zi de date.
+-- Backup-urile se realizează zilnic pentru a limita pierderea de date în caz de avarie.
+
+-- RTO (Recovery Time Objective): 2 ore
+-- Este esențial ca aplicația farmaciei să fie din nou funcțională rapid după un crash.
+-- Un timp de recuperare de maxim 2 ore asigură continuitatea activităților operaționale (eliberare rețete, consultare stocuri).
+
+-- Activare ARCHIVELOG (conectat sys)
+
+SHUTDOWN IMMEDIATE;
+STARTUP MOUNT;
+ALTER DATABASE ARCHIVELOG;
+ALTER DATABASE OPEN;
+
+ARCHIVE LOG LIST;
+
+rman target /
+
+BACKUP DATABASE PLUS ARCHIVELOG;
+
+LIST BACKUP;
+
+--Simulare crash
+
+DROP TABLE farmacie.vanzari;
+
+
+--Restaurare completă (recovery cu RMAN)
+
+rman target /
+
+SHUTDOWN IMMEDIATE;
+STARTUP MOUNT;
+RESTORE DATABASE;
+RECOVER DATABASE;
+ALTER DATABASE OPEN;
+

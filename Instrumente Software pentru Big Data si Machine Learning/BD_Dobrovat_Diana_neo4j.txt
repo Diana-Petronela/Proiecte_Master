@@ -1,0 +1,867 @@
+CREATE (g11:Gen {id_gen: 11, denumire_gen: 'Ficțiune'})
+CREATE (g12:Gen {id_gen: 12, denumire_gen: 'Istorie'})
+CREATE (g13:Gen {id_gen: 13, denumire_gen: 'Știință'})
+CREATE (g14:Gen {id_gen: 14, denumire_gen: 'Artă'})
+CREATE (g15:Gen {id_gen: 15, denumire_gen: 'Tehnologie'})
+CREATE (g16:Gen {id_gen: 16, denumire_gen: 'Biografie'})
+CREATE (g17:Gen {id_gen: 17, denumire_gen: 'Psihologie'})
+CREATE (g18:Gen {id_gen: 18, denumire_gen: 'Literatură'})
+CREATE (g19:Gen {id_gen: 19, denumire_gen: 'Fantasy'})
+CREATE (g110:Gen {id_gen: 110, denumire_gen: 'Jurnalism'})
+CREATE (g111:Gen {id_gen: 111, denumire_gen: 'Filosofie'})
+CREATE (g112:Gen {id_gen: 112, denumire_gen: 'Religie'})
+CREATE (g113:Gen {id_gen: 113, denumire_gen: 'Politică'})
+CREATE (g114:Gen {id_gen: 114, denumire_gen: 'Economie'})
+CREATE (g115:Gen {id_gen: 115, denumire_gen: 'Educație'})
+CREATE (g116:Gen {id_gen: 116, denumire_gen: 'Afaceri'})
+CREATE (g117:Gen {id_gen: 117, denumire_gen: 'Medicină'})
+CREATE (g118:Gen {id_gen: 118, denumire_gen: 'Matematică'})
+CREATE (g119:Gen {id_gen: 119, denumire_gen: 'Sport'})
+CREATE (g120:Gen {id_gen: 120, denumire_gen: 'Culinărie'})
+
+CREATE (a101:Autor {id_autor: 101, nume_autor: 'Ionescu Mihai', nationalitate: 'romana', data_nastere: date('1975-03-15')})
+CREATE (a102:Autor {id_autor: 102, nume_autor: 'Popescu Andreea', nationalitate: 'moldoveneasca', data_nastere: date('1980-07-22')})
+CREATE (a103:Autor {id_autor: 103, nume_autor: 'Mariscu John', nationalitate: 'britanica', data_nastere: date('1968-11-09')})
+CREATE (a104:Autor {id_autor: 104, nume_autor: 'Radu Elena', nationalitate: 'romana', data_nastere: date('1992-01-05')})
+CREATE (a105:Autor {id_autor: 105, nume_autor: 'Dumi Charlotte', nationalitate: 'american', data_nastere: date('1985-06-19')})
+CREATE (a106:Autor {id_autor: 106, nume_autor: 'Rogrigos Cristian', nationalitate: 'spaniola', data_nastere: date('1970-08-30')})
+CREATE (a107:Autor {id_autor: 107, nume_autor: 'Neagu Alina', nationalitate: 'romana', data_nastere: date('1988-04-12')})
+CREATE (a108:Autor {id_autor: 108, nume_autor: 'Negrii Constantin', nationalitate: 'moldoveneasca', data_nastere: date('1979-09-25')})
+CREATE (a109:Autor {id_autor: 109, nume_autor: 'Merlo Maria', nationalitate: 'italiana', data_nastere: date('1995-12-03')})
+CREATE (a1010:Autor {id_autor: 1010, nume_autor: 'Vasilescu Daniel', nationalitate: 'romana', data_nastere: date('1983-02-14')})
+CREATE (a1011:Autor {id_autor: 1011, nume_autor: 'Kovacs Istvan', nationalitate: 'maghiara', data_nastere: date('1990-03-11')})
+CREATE (a1012:Autor {id_autor: 1012, nume_autor: 'Dragović Ana', nationalitate: 'sarba', data_nastere: date('1972-07-08')})
+CREATE (a1013:Autor {id_autor: 1013, nume_autor: 'Peterson Lars', nationalitate: 'suedeza', data_nastere: date('1965-05-22')})
+CREATE (a1014:Autor {id_autor: 1014, nume_autor: 'O’Connor Fiona', nationalitate: 'irlandeza', data_nastere: date('1998-10-17')})
+CREATE (a1015:Autor {id_autor: 1015, nume_autor: 'Matsuda Akira', nationalitate: 'japoneza', data_nastere: date('1981-12-29')})
+CREATE (a1016:Autor {id_autor: 1016, nume_autor: 'Chen Li', nationalitate: 'chineza', data_nastere: date('1976-04-04')})
+CREATE (a1017:Autor {id_autor: 1017, nume_autor: 'Garcia Sofia', nationalitate: 'mexicana', data_nastere: date('1994-11-05')})
+CREATE (a1018:Autor {id_autor: 1018, nume_autor: 'Bălan Gabriel', nationalitate: 'romana', data_nastere: date('1987-03-21')})
+CREATE (a1019:Autor {id_autor: 1019, nume_autor: 'Nicoară Raluca', nationalitate: 'moldoveneasca', data_nastere: date('1978-09-01')})
+CREATE (a1020:Autor {id_autor: 1020, nume_autor: 'Pavel Mihnea', nationalitate: 'bulgara', data_nastere: date('1984-06-14')})
+
+CREATE (e201:Editura {id_editura: 201, nume_editura: 'Editura Universitară'})
+CREATE (e202:Editura {id_editura: 202, nume_editura: 'Editura Academica'})
+CREATE (e203:Editura {id_editura: 203, nume_editura: 'Editura Litera'})
+CREATE (e204:Editura {id_editura: 204, nume_editura: 'Editura Tehnica'})
+CREATE (e205:Editura {id_editura: 205, nume_editura: 'Editura Artă și Cultură'})
+CREATE (e206:Editura {id_editura: 206, nume_editura: 'Editura Științifică'})
+CREATE (e207:Editura {id_editura: 207, nume_editura: 'Editura Ficțiune'})
+CREATE (e208:Editura {id_editura: 208, nume_editura: 'Editura Istorie și Politică'})
+CREATE (e209:Editura {id_editura: 209, nume_editura: 'Editura Filosofie'})
+CREATE (e2010:Editura {id_editura: 2010, nume_editura: 'Editura Medicală'})
+CREATE (e2011:Editura {id_editura: 2011, nume_editura: 'Editura Educație'})
+CREATE (e2012:Editura {id_editura: 2012, nume_editura: 'Editura Business'})
+CREATE (e2013:Editura {id_editura: 2013, nume_editura: 'Editura Sportivă'})
+CREATE (e2014:Editura {id_editura: 2014, nume_editura: 'Editura Culinărie'})
+CREATE (e2015:Editura {id_editura: 2015, nume_editura: 'Editura Psihologie'})
+CREATE (e2016:Editura {id_editura: 2016, nume_editura: 'Editura Fantasy World'})
+CREATE (e2017:Editura {id_editura: 2017, nume_editura: 'Editura Religie'})
+CREATE (e2018:Editura {id_editura: 2018, nume_editura: 'Editura Jurnalism'})
+CREATE (e2019:Editura {id_editura: 2019, nume_editura: 'Editura Economie'})
+CREATE (e2020:Editura {id_editura: 2020, nume_editura: 'Editura Literatură Universală'})
+
+CREATE (c301:Carte {id_carte: 301, ISBN: '978-1234567890', titlu: 'Istoria României', nr_pagini: 300, tags: ['Istorie', 'Educativ'], rating_carte: 4.5})
+CREATE (c302:Carte {id_carte: 302, ISBN: '978-1234567891', titlu: 'Știința Modernă', nr_pagini: 250, tags: ['Știință', 'Cercetare'], rating_carte: 4.0})
+CREATE (c303:Carte {id_carte: 303, ISBN: '978-1234567892', titlu: 'Pictura Secolului 20', nr_pagini: 200, tags: ['Artă', 'Cultura'], rating_carte: 4.7})
+CREATE (c304:Carte {id_carte: 304, ISBN: '978-1234567893', titlu: 'Bazele Fizicii', nr_pagini: 350, tags: ['Tehnologie', 'Fizică'], rating_carte: 4.8})
+CREATE (c305:Carte {id_carte: 305, ISBN: '978-1234567894', titlu: 'Biografia unui Geniu', nr_pagini: 400, tags: ['Biografie', 'Inspirational'], rating_carte: 4.2})
+CREATE (c306:Carte {id_carte: 306, ISBN: '978-1234567895', titlu: 'Filosofia Antică', nr_pagini: 500, tags: ['Filosofie', 'Gândire'], rating_carte: 4.9})
+CREATE (c307:Carte {id_carte: 307, ISBN: '978-1234567896', titlu: 'Religie și Cultură', nr_pagini: 180, tags: ['Religie', 'Spiritualitate'], rating_carte: 4.1})
+CREATE (c308:Carte {id_carte: 308, ISBN: '978-1234567897', titlu: 'Literatura Română', nr_pagini: 450, tags: ['Literatură', 'Cultura'], rating_carte: 4.6})
+CREATE (c309:Carte {id_carte: 309, ISBN: '978-1234567898', titlu: 'Fantasy World', nr_pagini: 600, tags: ['Fantasy', 'Aventură'], rating_carte: 4.3})
+CREATE (c3010:Carte {id_carte: 3010, ISBN: '978-1234567899', titlu: 'Psihologia Pozitivă', nr_pagini: 300, tags: ['Psihologie', 'Dezvoltare'], rating_carte: 4.4})
+CREATE (c3011:Carte {id_carte: 3011, ISBN: '978-1234567810', titlu: 'Sportivi de Legendă', nr_pagini: 250, tags: ['Sport', 'Inspirational'], rating_carte: 4.0})
+CREATE (c3012:Carte {id_carte: 3012, ISBN: '978-1234567811', titlu: 'Rețete Internaționale', nr_pagini: 280, tags: ['Culinărie', 'Gastronomie'], rating_carte: 4.7})
+CREATE (c3013:Carte {id_carte: 3013, ISBN: '978-1234567812', titlu: 'Matematică pentru Începători', nr_pagini: 220, tags: ['Matematică', 'Educație'], rating_carte: 4.8})
+CREATE (c3014:Carte {id_carte: 3014, ISBN: '978-1234567813', titlu: 'Istorie Politică', nr_pagini: 340, tags: ['Politică', 'Istorie'], rating_carte: 4.2})
+CREATE (c3015:Carte {id_carte: 3015, ISBN: '978-1234567814', titlu: 'Bazele Economiei', nr_pagini: 400, tags: ['Economie', 'Educativ'], rating_carte: 4.6})
+CREATE (c3016:Carte {id_carte: 3016, ISBN: '978-1234567815', titlu: 'Educația Modernă', nr_pagini: 360, tags: ['Educație', 'Modern'], rating_carte: 4.5})
+CREATE (c3017:Carte {id_carte: 3017, ISBN: '978-1234567816', titlu: 'Management de Succes', nr_pagini: 500, tags: ['Afaceri', 'Management'], rating_carte: 4.3})
+CREATE (c3018:Carte {id_carte: 3018, ISBN: '978-1234567817', titlu: 'Medicina pentru Toți', nr_pagini: 600, tags: ['Medicină', 'Sănătate'], rating_carte: 4.9})
+CREATE (c3019:Carte {id_carte: 3019, ISBN: '978-1234567818', titlu: 'Jurnalism Modern', nr_pagini: 300, tags: ['Jurnalism', 'Media'], rating_carte: 4.1})
+CREATE (c3020:Carte {id_carte: 3020, ISBN: '978-1234567819', titlu: 'Arta de a Scrie', nr_pagini: 400, tags: ['Artă', 'Creativitate'], rating_carte: 4.8})
+
+CREATE (p401:Periodic {id_periodic: 401, titlu: 'Revista de Știință', volum: 5.0, numar: 2, nr_pagini: 50, data_publicare: date('2024-10-15')})
+CREATE (p402:Periodic {id_periodic: 402, titlu: 'Gazeta Istorică', volum: 10.0, numar: 1, nr_pagini: 60, data_publicare: date('2024-11-01')})
+CREATE (p403:Periodic {id_periodic: 403, titlu: 'Literatura Contemporană', volum: 3.0, numar: 12, nr_pagini: 45, data_publicare: date('2024-09-10')})
+CREATE (p404:Periodic {id_periodic: 404, titlu: 'Revista Tehnologică', volum: 7.0, numar: 3, nr_pagini: 80, data_publicare: date('2024-08-05')})
+CREATE (p405:Periodic {id_periodic: 405, titlu: 'Revista de Artă', volum: 12.0, numar: 5, nr_pagini: 40, data_publicare: date('2024-07-20')})
+CREATE (p406:Periodic {id_periodic: 406, titlu: 'Tehnologia Viitorului', volum: 6.0, numar: 6, nr_pagini: 55, data_publicare: date('2024-06-15')})
+CREATE (p407:Periodic {id_periodic: 407, titlu: 'Știința Astăzi', volum: 4.0, numar: 7, nr_pagini: 65, data_publicare: date('2024-05-25')})
+CREATE (p408:Periodic {id_periodic: 408, titlu: 'Istoria secolului 21', volum: 8.0, numar: 4, nr_pagini: 70, data_publicare: date('2024-04-18')})
+CREATE (p409:Periodic {id_periodic: 409, titlu: 'Inovație în Artă', volum: 11.0, numar: 8, nr_pagini: 60, data_publicare: date('2024-03-10')})
+CREATE (p4010:Periodic {id_periodic: 4010, titlu: 'Cultura Digitală', volum: 9.0, numar: 9, nr_pagini: 85, data_publicare: date('2024-02-05')})
+CREATE (p4011:Periodic {id_periodic: 4011, titlu: 'Filosofie Aplicată', volum: 7.0, numar: 10, nr_pagini: 50, data_publicare: date('2024-01-20')})
+CREATE (p4012:Periodic {id_periodic: 4012, titlu: 'Războiul din Istorie', volum: 15.0, numar: 11, nr_pagini: 100, data_publicare: date('2023-12-25')})
+CREATE (p4013:Periodic {id_periodic: 4013, titlu: 'Medicina în Mâinile Tale', volum: 6.0, numar: 2, nr_pagini: 40, data_publicare: date('2023-11-30')})
+CREATE (p4014:Periodic {id_periodic: 4014, titlu: 'Gândire Strategică', volum: 5.0, numar: 4, nr_pagini: 60, data_publicare: date('2023-10-12')})
+CREATE (p4015:Periodic {id_periodic: 4015, titlu: 'Povești din Lumea Fantasy', volum: 3.0, numar: 1, nr_pagini: 50, data_publicare: date('2023-09-07')})
+CREATE (p4016:Periodic {id_periodic: 4016, titlu: 'Explorând Universul', volum: 10.0, numar: 3, nr_pagini: 80, data_publicare: date('2023-08-20')})
+CREATE (p4017:Periodic {id_periodic: 4017, titlu: 'Istoria Artefactelor', volum: 12.0, numar: 5, nr_pagini: 75, data_publicare: date('2023-07-15')})
+CREATE (p4018:Periodic {id_periodic: 4018, titlu: 'Fiecare Zi un Pas', volum: 9.0, numar: 7, nr_pagini: 60, data_publicare: date('2023-06-10')})
+CREATE (p4019:Periodic {id_periodic: 4019, titlu: 'Sportivii de Mâine', volum: 5.0, numar: 9, nr_pagini: 50, data_publicare: date('2023-05-01')})
+CREATE (p4020:Periodic {id_periodic: 4020, titlu: 'Tehnologia în Viitorul Aproape', volum: 4.0, numar: 8, nr_pagini: 90, data_publicare: date('2023-04-15')})
+
+CREATE (dp41:Detalii_Periodice {id_detaliu_periodic: 41, numar: 2, tematica: 'Știință Aplicată', nr_pagini: 50, data_aparitie: date('2024-10-15')})
+CREATE (dp42:Detalii_Periodice {id_detaliu_periodic: 42, numar: 1, tematica: 'Istorie Modernă', nr_pagini: 60, data_aparitie: date('2024-11-01')})
+CREATE (dp43:Detalii_Periodice {id_detaliu_periodic: 43, numar: 12, tematica: 'Literatură', nr_pagini: 45, data_aparitie: date('2024-09-10')})
+CREATE (dp44:Detalii_Periodice {id_detaliu_periodic: 44, numar: 3, tematica: 'Tehnologie Avansată', nr_pagini: 80, data_aparitie: date('2024-08-05')})
+CREATE (dp45:Detalii_Periodice {id_detaliu_periodic: 45, numar: 5, tematica: 'Artă Contemporană', nr_pagini: 40, data_aparitie: date('2024-07-20')})
+CREATE (dp46:Detalii_Periodice {id_detaliu_periodic: 46, numar: 6, tematica: 'Tehnologii emergente', nr_pagini: 55, data_aparitie: date('2024-06-15')})
+CREATE (dp47:Detalii_Periodice {id_detaliu_periodic: 47, numar: 7, tematica: 'Știință modernă', nr_pagini: 65, data_aparitie: date('2024-05-25')})
+CREATE (dp48:Detalii_Periodice {id_detaliu_periodic: 48, numar: 4, tematica: 'Istorie secolul XXI', nr_pagini: 70, data_aparitie: date('2024-04-18')})
+CREATE (dp49:Detalii_Periodice {id_detaliu_periodic: 49, numar: 8, tematica: 'Artă digitală', nr_pagini: 60, data_aparitie: date('2024-03-10')})
+CREATE (dp410:Detalii_Periodice {id_detaliu_periodic: 410, numar: 9, tematica: 'Inovații tehnologice', nr_pagini: 85, data_aparitie: date('2024-02-05')})
+CREATE (dp411:Detalii_Periodice {id_detaliu_periodic: 411, numar: 10, tematica: 'Filosofie și gândire critică', nr_pagini: 50, data_aparitie: date('2024-01-20')})
+CREATE (dp412:Detalii_Periodice {id_detaliu_periodic: 412, numar: 11, tematica: 'Istorie mondială', nr_pagini: 100, data_aparitie: date('2023-12-25')})
+CREATE (dp413:Detalii_Periodice {id_detaliu_periodic: 413, numar: 2, tematica: 'Medicină și sănătate', nr_pagini: 40, data_aparitie: date('2023-11-30')})
+CREATE (dp414:Detalii_Periodice {id_detaliu_periodic: 414, numar: 4, tematica: 'Strategii economice', nr_pagini: 60, data_aparitie: date('2023-10-12')})
+CREATE (dp415:Detalii_Periodice {id_detaliu_periodic: 415, numar: 1, tematica: 'Povești fantastice', nr_pagini: 50, data_aparitie: date('2023-09-07')})
+CREATE (dp416:Detalii_Periodice {id_detaliu_periodic: 416, numar: 3, tematica: 'Astronomie și științe', nr_pagini: 80, data_aparitie: date('2023-08-20')})
+CREATE (dp417:Detalii_Periodice {id_detaliu_periodic: 417, numar: 5, tematica: 'Istorie antică', nr_pagini: 75, data_aparitie: date('2023-07-15')})
+CREATE (dp418:Detalii_Periodice {id_detaliu_periodic: 418, numar: 7, tematica: 'Psihologie și comportament', nr_pagini: 60, data_aparitie: date('2023-06-10')})
+CREATE (dp419:Detalii_Periodice {id_detaliu_periodic: 419, numar: 9, tematica: 'Sport de performanță', nr_pagini: 50, data_aparitie: date('2023-05-01')})
+CREATE (dp420:Detalii_Periodice {id_detaliu_periodic: 420, numar: 8, tematica: 'Tehnologii emergente', nr_pagini: 90, data_aparitie: date('2023-04-15')})
+
+CREATE (cc81:Categorie_Cititor {id_categorie: 81, denumire_categorie: 'Adulți 26-55', max_imprumuturi: 4})
+CREATE (cc82:Categorie_Cititor {id_categorie: 82, denumire_categorie: 'Tineri 12-25', max_imprumuturi: 3})
+CREATE (cc83:Categorie_Cititor {id_categorie: 83, denumire_categorie: 'Seniori 56<', max_imprumuturi: 4})
+CREATE (cc84:Categorie_Cititor {id_categorie: 84, denumire_categorie: 'Profesori', max_imprumuturi: 10})
+CREATE (cc85:Categorie_Cititor {id_categorie: 85, denumire_categorie: 'Studenți', max_imprumuturi: 5})
+CREATE (cc86:Categorie_Cititor {id_categorie: 86, denumire_categorie: 'Cititori frecvenți', max_imprumuturi: 10})
+CREATE (cc87:Categorie_Cititor {id_categorie: 87, denumire_categorie: 'Cititori ocazionali', max_imprumuturi: 2})
+
+CREATE (cit8011:Cititor {id_cititor: 8011, nume_cititor: 'Raluca Ene', varsta: 34, adresa_cititor: 'Str. Păcii nr. 12, București', telefon_cititor: '0745123456', email_cititor: 'raluca.ene@gmail.com', nr_carti_imprumutate_curent: 3})
+CREATE (cit8012:Cititor {id_cititor: 8012, nume_cititor: 'Ion Stoica', varsta: 58, adresa_cititor: 'Str. Unirii nr. 45, Cluj-Napoca', telefon_cititor: '0732123456', email_cititor: 'ion.stoica@gmail.com'})
+CREATE (cit8013:Cititor {id_cititor: 8013, nume_cititor: 'Ana Marcu', varsta: 21, adresa_cititor: 'Str. Speranței nr. 7, Iași', telefon_cititor: '0756123456', email_cititor: 'ana.marcu@gmail.com', nr_carti_imprumutate_curent: 1})
+CREATE (cit8014:Cititor {id_cititor: 8014, nume_cititor: 'Victor Pop', varsta: 40, adresa_cititor: 'Str. Libertății nr. 20, Brașov', telefon_cititor: '0767123456', email_cititor: 'victor.pop@gmail.com', nr_carti_imprumutate_curent: 4})
+CREATE (cit8015:Cititor {id_cititor: 8015, nume_cititor: 'Carmen Gheorghe', varsta: 36, adresa_cititor: 'Str. Dunării nr. 14, Constanța', telefon_cititor: '0748123456', email_cititor: 'carmen.gheorghe@gmail.com', nr_carti_imprumutate_curent: 2})
+CREATE (cit8016:Cititor {id_cititor: 8016, nume_cititor: 'Daniela Banu', varsta: 24, adresa_cititor: 'Str. Revoluției nr. 3, Sibiu', telefon_cititor: '0739123456', email_cititor: 'daniela.banu@gmail.com'})
+CREATE (cit8017:Cititor {id_cititor: 8017, nume_cititor: 'Gheorghe Ilie', varsta: 65, adresa_cititor: 'Str. Viilor nr. 1, Timișoara', telefon_cititor: '0721123456', email_cititor: 'gheorghe.ilie@gmail.com', nr_carti_imprumutate_curent: 5})
+CREATE (cit8018:Cititor {id_cititor: 8018, nume_cititor: 'Simona Badea', varsta: 33, adresa_cititor: 'Str. Mioriței nr. 22, Oradea', telefon_cititor: '0772123456', email_cititor: 'simona.badea@gmail.com'})
+CREATE (cit8019:Cititor {id_cititor: 8019, nume_cititor: 'Marian Luca', varsta: 45, adresa_cititor: 'Str. Plopilor nr. 9, Pitești', telefon_cititor: '0783123456', email_cititor: 'marian.luca@gmail.com', nr_carti_imprumutate_curent: 8})
+CREATE (cit8020:Cititor {id_cititor: 8020, nume_cititor: 'Laura Cristea', varsta: 19, adresa_cititor: 'Str. Cerbului nr. 18, Craiova', telefon_cititor: '0714123456', email_cititor: 'laura.cristea@gmail.com', nr_carti_imprumutate_curent: 1})
+CREATE (cit8021:Cititor {id_cititor: 8021, nume_cititor: 'Dumitru Iancu', varsta: 55, adresa_cititor: 'Str. Cireșului nr. 6, București', telefon_cititor: '0795123456', email_cititor: 'dumitru.iancu@gmail.com'})
+CREATE (cit8022:Cititor {id_cititor: 8022, nume_cititor: 'Andreea Vasile', varsta: 38, adresa_cititor: 'Str. Alunișului nr. 15, Galați', telefon_cititor: '0706123456', email_cititor: 'andreea.vasile@gmail.com', nr_carti_imprumutate_curent: 7})
+CREATE (cit8023:Cititor {id_cititor: 8023, nume_cititor: 'Bogdan Ene', varsta: 22, adresa_cititor: 'Str. Prutului nr. 11, Cluj-Napoca', telefon_cititor: '0757123456', email_cititor: 'bogdan.ene@gmail.com'})
+CREATE (cit8024:Cititor {id_cititor: 8024, nume_cititor: 'Mihai Dobre', varsta: 42, adresa_cititor: 'Str. Fagului nr. 30, Brașov', telefon_cititor: '0768123456', email_cititor: 'mihai.dobre@gmail.com', nr_carti_imprumutate_curent: 4})
+CREATE (cit8025:Cititor {id_cititor: 8025, nume_cititor: 'Veronica Toma', varsta: 67, adresa_cititor: 'Str. Someșului nr. 4, Iași', telefon_cititor: '0779123456', email_cititor: 'veronica.toma@gmail.com', nr_carti_imprumutate_curent: 5})
+
+CREATE (ang701:Angajat {id_angajat: 701, nume_angajat: 'Popescu Andrei', functie: 'Librar', data_angajare: date('2022-01-15'), salariu: 3000.00})
+CREATE (ang702:Angajat {id_angajat: 702, nume_angajat: 'Ionescu Maria', functie: 'Bibliotecar', data_angajare: date('2021-11-20'), salariu: 3500.00})
+CREATE (ang703:Angajat {id_angajat: 703, nume_angajat: 'Vasilescu Ion', functie: 'Director', data_angajare: date('2020-03-10'), salariu: 5000.00})
+CREATE (ang704:Angajat {id_angajat: 704, nume_angajat: 'Munteanu Elena', functie: 'Asistent', data_angajare: date('2022-05-01'), salariu: 2800.00})
+CREATE (ang705:Angajat {id_angajat: 705, nume_angajat: 'Georgescu Andra', functie: 'Administrator', data_angajare: date('2021-07-30'), salariu: 3200.00})
+CREATE (ang706:Angajat {id_angajat: 706, nume_angajat: 'Constantin Florin', functie: 'Librar', data_angajare: date('2023-02-12'), salariu: 2900.00})
+CREATE (ang707:Angajat {id_angajat: 707, nume_angajat: 'Dumitru Alexandra', functie: 'Bibliotecar', data_angajare: date('2022-09-15'), salariu: 3300.00})
+CREATE (ang708:Angajat {id_angajat: 708, nume_angajat: 'Nistor Cosmin', functie: 'Asistent', data_angajare: date('2023-01-20'), salariu: 2600.00})
+CREATE (ang709:Angajat {id_angajat: 709, nume_angajat: 'Popa Loredana', functie: 'Administrator', data_angajare: date('2021-10-10'), salariu: 3100.00})
+CREATE (ang7010:Angajat {id_angajat: 7010, nume_angajat: 'Sima Gheorghe', functie: 'Director', data_angajare: date('2019-06-25'), salariu: 6000.00})
+
+CREATE (cop55:Copie_Carte {id_copie: 55, cota: 'A1', an_publicare: date('2020-06-15'), nr_disponibile: 10})
+CREATE (cop56:Copie_Carte {id_copie: 56, cota: 'A2', an_publicare: date('2021-05-20'), nr_disponibile: 10})
+CREATE (cop57:Copie_Carte {id_copie: 57, cota: 'A3', an_publicare: date('2022-07-10'), nr_disponibile: 10})
+CREATE (cop58:Copie_Carte {id_copie: 58, cota: 'A4', an_publicare: date('2023-11-30'), nr_disponibile: 10})
+CREATE (cop59:Copie_Carte {id_copie: 59, cota: 'A5', an_publicare: date('2024-03-25'), nr_disponibile: 10})
+CREATE (cop510:Copie_Carte {id_copie: 510, cota: 'B1', an_publicare: date('2020-08-12'), nr_disponibile: 10})
+CREATE (cop511:Copie_Carte {id_copie: 511, cota: 'B2', an_publicare: date('2021-01-15'), nr_disponibile: 10})
+CREATE (cop512:Copie_Carte {id_copie: 512, cota: 'B3', an_publicare: date('2022-04-10'), nr_disponibile: 10})
+CREATE (cop513:Copie_Carte {id_copie: 513, cota: 'B4', an_publicare: date('2023-02-20'), nr_disponibile: 10})
+CREATE (cop514:Copie_Carte {id_copie: 514, cota: 'B5', an_publicare: date('2024-12-05'), nr_disponibile: 10})
+CREATE (cop515:Copie_Carte {id_copie: 515, cota: 'C1', an_publicare: date('2020-10-01'), nr_disponibile: 10})
+CREATE (cop516:Copie_Carte {id_copie: 516, cota: 'C2', an_publicare: date('2021-09-22'), nr_disponibile: 10})
+CREATE (cop517:Copie_Carte {id_copie: 517, cota: 'C3', an_publicare: date('2022-06-05'), nr_disponibile: 10})
+CREATE (cop518:Copie_Carte {id_copie: 518, cota: 'C4', an_publicare: date('2023-04-10'), nr_disponibile: 10})
+CREATE (cop519:Copie_Carte {id_copie: 519, cota: 'C5', an_publicare: date('2024-07-20'), nr_disponibile: 10})
+CREATE (cop520:Copie_Carte {id_copie: 520, cota: 'D1', an_publicare: date('2020-05-30'), nr_disponibile: 10})
+CREATE (cop521:Copie_Carte {id_copie: 521, cota: 'D2', an_publicare: date('2021-02-15'), nr_disponibile: 10})
+CREATE (cop522:Copie_Carte {id_copie: 522, cota: 'D3', an_publicare: date('2022-11-10'), nr_disponibile: 10})
+CREATE (cop523:Copie_Carte {id_copie: 523, cota: 'D4', an_publicare: date('2023-09-05'), nr_disponibile: 10})
+CREATE (cop524:Copie_Carte {id_copie: 524, cota: 'D5', an_publicare: date('2024-01-12'), nr_disponibile: 10})
+CREATE (cop525:Copie_Carte {id_copie: 525, cota: 'E1', an_publicare: date('2020-06-15'), nr_disponibile: 10})
+CREATE (cop526:Copie_Carte {id_copie: 526, cota: 'E2', an_publicare: date('2021-05-20'), nr_disponibile: 10})
+CREATE (cop527:Copie_Carte {id_copie: 527, cota: 'E3', an_publicare: date('2022-07-10'), nr_disponibile: 10})
+CREATE (cop528:Copie_Carte {id_copie: 528, cota: 'E4', an_publicare: date('2023-11-30'), nr_disponibile: 10})
+CREATE (cop529:Copie_Carte {id_copie: 529, cota: 'E5', an_publicare: date('2024-03-25'), nr_disponibile: 10})
+CREATE (cop530:Copie_Carte {id_copie: 530, cota: 'F1', an_publicare: date('2020-08-12'), nr_disponibile: 10})
+CREATE (cop531:Copie_Carte {id_copie: 531, cota: 'F2', an_publicare: date('2021-01-15'), nr_disponibile: 10})
+CREATE (cop532:Copie_Carte {id_copie: 532, cota: 'F3', an_publicare: date('2022-04-10'), nr_disponibile: 10})
+CREATE (cop533:Copie_Carte {id_copie: 533, cota: 'F4', an_publicare: date('2023-02-20'), nr_disponibile: 10})
+CREATE (cop534:Copie_Carte {id_copie: 534, cota: 'F5', an_publicare: date('2024-12-05'), nr_disponibile: 10})
+CREATE (cop535:Copie_Carte {id_copie: 535, cota: 'G1', an_publicare: date('2020-10-01'), nr_disponibile: 10})
+CREATE (cop536:Copie_Carte {id_copie: 536, cota: 'G2', an_publicare: date('2021-09-22'), nr_disponibile: 10})
+CREATE (cop537:Copie_Carte {id_copie: 537, cota: 'G3', an_publicare: date('2022-06-05'), nr_disponibile: 10})
+CREATE (cop538:Copie_Carte {id_copie: 538, cota: 'G4', an_publicare: date('2023-04-10'), nr_disponibile: 10})
+CREATE (cop539:Copie_Carte {id_copie: 539, cota: 'G5', an_publicare: date('2024-07-20'), nr_disponibile: 10})
+CREATE (cop540:Copie_Carte {id_copie: 540, cota: 'H1', an_publicare: date('2020-05-30'), nr_disponibile: 10})
+CREATE (cop541:Copie_Carte {id_copie: 541, cota: 'H2', an_publicare: date('2021-02-15'), nr_disponibile: 10})
+CREATE (cop542:Copie_Carte {id_copie: 542, cota: 'H3', an_publicare: date('2022-11-10'), nr_disponibile: 10})
+CREATE (cop543:Copie_Carte {id_copie: 543, cota: 'H4', an_publicare: date('2023-09-05'), nr_disponibile: 10})
+CREATE (cop544:Copie_Carte {id_copie: 544, cota: 'H5', an_publicare: date('2024-01-12'), nr_disponibile: 10})
+CREATE (cop545:Copie_Carte {id_copie: 545, cota: 'I1', an_publicare: date('2020-06-15'), nr_disponibile: 10})
+CREATE (cop546:Copie_Carte {id_copie: 546, cota: 'I2', an_publicare: date('2021-05-20'), nr_disponibile: 10})
+CREATE (cop547:Copie_Carte {id_copie: 547, cota: 'I3', an_publicare: date('2022-07-10'), nr_disponibile: 10})
+CREATE (cop548:Copie_Carte {id_copie: 548, cota: 'I4', an_publicare: date('2023-11-30'), nr_disponibile: 10})
+CREATE (cop549:Copie_Carte {id_copie: 549, cota: 'I5', an_publicare: date('2024-03-25'), nr_disponibile: 10})
+CREATE (cop550:Copie_Carte {id_copie: 550, cota: 'J1', an_publicare: date('2020-08-12'), nr_disponibile: 10})
+CREATE (cop551:Copie_Carte {id_copie: 551, cota: 'J2', an_publicare: date('2021-01-15'), nr_disponibile: 10})
+CREATE (cop552:Copie_Carte {id_copie: 552, cota: 'J3', an_publicare: date('2022-04-10'), nr_disponibile: 10})
+CREATE (cop553:Copie_Carte {id_copie: 553, cota: 'J4', an_publicare: date('2023-02-20'), nr_disponibile: 10})
+CREATE (cop554:Copie_Carte {id_copie: 554, cota: 'J5', an_publicare: date('2024-12-05'), nr_disponibile: 10})
+
+CREATE (imp601:Imprumut {id_imprumut: 601, data_imprumut: date('2023-11-10'), data_returnare: date('2023-11-15'), nr_carti_imprumutate: 2, nr_carti_restituite: 2})
+CREATE (imp602:Imprumut {id_imprumut: 602, data_imprumut: date('2024-08-17'), data_returnare: date('2024-08-20'), nr_carti_imprumutate: 2, nr_carti_restituite: 2})
+CREATE (imp603:Imprumut {id_imprumut: 603, data_imprumut: date('2024-09-10'), data_returnare: date('2024-09-24'), nr_carti_imprumutate: 3, nr_carti_restituite: 3})
+CREATE (imp604:Imprumut {id_imprumut: 604, data_imprumut: date('2024-08-05'), data_returnare: date('2024-08-19'), nr_carti_imprumutate: 2, nr_carti_restituite: 2})
+CREATE (imp605:Imprumut {id_imprumut: 605, data_imprumut: date('2024-07-20'), data_returnare: date('2024-08-03'), nr_carti_imprumutate: 1, nr_carti_restituite: 1})
+CREATE (imp606:Imprumut {id_imprumut: 606, data_imprumut: date('2024-10-05'), data_returnare: date('2024-10-10'), nr_carti_imprumutate: 2, nr_carti_restituite: 2})
+CREATE (imp607:Imprumut {id_imprumut: 607, data_imprumut: date('2024-09-09'), data_returnare: date('2024-09-15'), nr_carti_imprumutate: 4, nr_carti_restituite: 4})
+CREATE (imp608:Imprumut {id_imprumut: 608, data_imprumut: date('2024-04-25'), data_returnare: date('2024-05-09'), nr_carti_imprumutate: 3, nr_carti_restituite: 3})
+CREATE (imp609:Imprumut {id_imprumut: 609, data_imprumut: date('2024-07-20'), data_returnare: date('2024-07-25'), nr_carti_imprumutate: 1, nr_carti_restituite: 1})
+CREATE (imp6010:Imprumut {id_imprumut: 6010, data_imprumut: date('2024-02-05'), data_returnare: date('2024-02-19'), nr_carti_imprumutate: 3, nr_carti_restituite: 3})
+CREATE (imp6011:Imprumut {id_imprumut: 6011, data_imprumut: date('2024-01-20'), data_returnare: date('2024-02-03'), nr_carti_imprumutate: 3, nr_carti_restituite: 3})
+CREATE (imp6012:Imprumut {id_imprumut: 6012, data_imprumut: date('2023-12-25'), data_returnare: date('2024-01-08'), nr_carti_imprumutate: 2, nr_carti_restituite: 2})
+CREATE (imp6013:Imprumut {id_imprumut: 6013, data_imprumut: date('2023-11-05'), data_returnare: date('2023-11-19'), nr_carti_imprumutate: 2, nr_carti_restituite: 2})
+CREATE (imp6014:Imprumut {id_imprumut: 6014, data_imprumut: date('2023-10-12'), data_returnare: date('2023-10-26'), nr_carti_imprumutate: 3, nr_carti_restituite: 3})
+CREATE (imp6015:Imprumut {id_imprumut: 6015, data_imprumut: date('2023-09-22'), data_returnare: date('2023-10-06'), nr_carti_imprumutate: 3, nr_carti_restituite: 3})
+CREATE (imp6016:Imprumut {id_imprumut: 6016, data_imprumut: date('2023-08-15'), data_returnare: date('2023-08-29'), nr_carti_imprumutate: 4, nr_carti_restituite: 4})
+CREATE (imp6017:Imprumut {id_imprumut: 6017, data_imprumut: date('2023-07-20'), data_returnare: date('2023-07-22'), nr_carti_imprumutate: 1, nr_carti_restituite: 1})
+CREATE (imp6018:Imprumut {id_imprumut: 6018, data_imprumut: date('2023-06-10'), data_returnare: date('2023-06-24'), nr_carti_imprumutate: 3, nr_carti_restituite: 3})
+CREATE (imp6019:Imprumut {id_imprumut: 6019, data_imprumut: date('2023-05-25'), data_returnare: date('2023-06-08'), nr_carti_imprumutate: 2, nr_carti_restituite: 2})
+CREATE (imp6020:Imprumut {id_imprumut: 6020, data_imprumut: date('2023-04-12'), data_returnare: date('2023-04-26'), nr_carti_imprumutate: 1, nr_carti_restituite: 1})
+CREATE (imp6021:Imprumut {id_imprumut: 6021, data_imprumut: date('2024-11-12'), data_returnare: null, nr_carti_imprumutate: 2, nr_carti_restituite: null})
+CREATE (imp6022:Imprumut {id_imprumut: 6022, data_imprumut: date('2024-12-12'), data_returnare: null, nr_carti_imprumutate: 3, nr_carti_restituite: null})
+CREATE (imp6023:Imprumut {id_imprumut: 6023, data_imprumut: date('2024-11-22'), data_returnare: null, nr_carti_imprumutate: 1, nr_carti_restituite: null})
+CREATE (imp6024:Imprumut {id_imprumut: 6024, data_imprumut: date('2024-12-02'), data_returnare: null, nr_carti_imprumutate: 2, nr_carti_restituite: null})
+CREATE (imp6025:Imprumut {id_imprumut: 6025, data_imprumut: date('2024-12-05'), data_returnare: null, nr_carti_imprumutate: 1, nr_carti_restituite: null})
+CREATE (imp6026:Imprumut {id_imprumut: 6026, data_imprumut: date('2024-12-02'), data_returnare: null, nr_carti_imprumutate: 2, nr_carti_restituite: null})
+CREATE (imp6027:Imprumut {id_imprumut: 6027, data_imprumut: date('2024-10-20'), data_returnare: null, nr_carti_imprumutate: 2, nr_carti_restituite: null})
+CREATE (imp6028:Imprumut {id_imprumut: 6028, data_imprumut: date('2024-10-29'), data_returnare: null, nr_carti_imprumutate: 2, nr_carti_restituite: null})
+CREATE (imp6029:Imprumut {id_imprumut: 6029, data_imprumut: date('2024-11-17'), data_returnare: null, nr_carti_imprumutate: 1, nr_carti_restituite: null})
+CREATE (imp6030:Imprumut {id_imprumut: 6030, data_imprumut: date('2024-09-28'), data_returnare: null, nr_carti_imprumutate: 1, nr_carti_restituite: null})
+
+CREATE (pen501:Penalizare {id_penalizare: 501, valoare_penalizare: 15.0, motiv_penalizare: 'Întârziere returnare carte', data_penalizare: date('2024-12-01')})
+CREATE (pen502:Penalizare {id_penalizare: 502, valoare_penalizare: 10.0, motiv_penalizare: 'Carte deteriorată', data_penalizare: date('2024-11-20')})
+CREATE (pen503:Penalizare {id_penalizare: 503, valoare_penalizare: 20.0, motiv_penalizare: 'Întârziere returnare carte', data_penalizare: date('2024-10-15')})
+CREATE (pen504:Penalizare {id_penalizare: 504, valoare_penalizare: 25.0, motiv_penalizare: 'Carte deteriorată', data_penalizare: date('2024-09-10')})
+CREATE (pen505:Penalizare {id_penalizare: 505, valoare_penalizare: 30.0, motiv_penalizare: 'Întârziere returnare carte', data_penalizare: date('2024-08-05')})
+CREATE (pen506:Penalizare {id_penalizare: 506, valoare_penalizare: 10.0, motiv_penalizare: 'Întârziere returnare carte', data_penalizare: date('2024-07-20')})
+CREATE (pen507:Penalizare {id_penalizare: 507, valoare_penalizare: 5.0, motiv_penalizare: 'Carte pierdută', data_penalizare: date('2024-06-10')})
+CREATE (pen508:Penalizare {id_penalizare: 508, valoare_penalizare: 15.0, motiv_penalizare: 'Întârziere returnare carte', data_penalizare: date('2024-05-15')})
+CREATE (pen509:Penalizare {id_penalizare: 509, valoare_penalizare: 12.0, motiv_penalizare: 'Carte deteriorată', data_penalizare: date('2024-04-10')})
+CREATE (pen5010:Penalizare {id_penalizare: 5010, valoare_penalizare: 18.0, motiv_penalizare: 'Întârziere returnare carte', data_penalizare: date('2024-03-05')})
+CREATE (pen5011:Penalizare {id_penalizare: 5011, valoare_penalizare: 20.0, motiv_penalizare: 'Carte deteriorată', data_penalizare: date('2024-02-28')})
+CREATE (pen5012:Penalizare {id_penalizare: 5012, valoare_penalizare: 8.0, motiv_penalizare: 'Întârziere returnare carte', data_penalizare: date('2024-01-20')})
+CREATE (pen5013:Penalizare {id_penalizare: 5013, valoare_penalizare: 30.0, motiv_penalizare: 'Carte pierdută', data_penalizare: date('2023-12-10')})
+CREATE (pen5014:Penalizare {id_penalizare: 5014, valoare_penalizare: 25.0, motiv_penalizare: 'Întârziere returnare carte', data_penalizare: date('2023-11-15')})
+CREATE (pen5015:Penalizare {id_penalizare: 5015, valoare_penalizare: 5.0, motiv_penalizare: 'Carte deteriorată', data_penalizare: date('2023-10-01')})
+CREATE (pen5016:Penalizare {id_penalizare: 5016, valoare_penalizare: 10.0, motiv_penalizare: 'Întârziere returnare carte', data_penalizare: date('2023-09-25')})
+CREATE (pen5017:Penalizare {id_penalizare: 5017, valoare_penalizare: 15.0, motiv_penalizare: 'Carte pierdută', data_penalizare: date('2023-08-15')})
+CREATE (pen5018:Penalizare {id_penalizare: 5018, valoare_penalizare: 20.0, motiv_penalizare: 'Întârziere returnare carte', data_penalizare: date('2023-07-10')})
+CREATE (pen5019:Penalizare {id_penalizare: 5019, valoare_penalizare: 12.0, motiv_penalizare: 'Carte deteriorată', data_penalizare: date('2023-06-05')})
+CREATE (pen5020:Penalizare {id_penalizare: 5020, valoare_penalizare: 30.0, motiv_penalizare: 'Carte pierdută', data_penalizare: date('2023-05-10')})
+
+CREATE (ca41:Carte_Afectata {id_carte_afectata: 41, descriere_stare: 'Pagini rupte', tip_afectare: 'deteriorata', data_afectare: date('2023-11-15'), cost_reparare: 50.00})
+CREATE (ca42:Carte_Afectata {id_carte_afectata: 42, descriere_stare: 'Coperta deteriorată', tip_afectare: 'deteriorata', data_afectare: date('2024-10-10'), cost_reparare: 30.00})
+CREATE (ca43:Carte_Afectata {id_carte_afectata: 43, descriere_stare: 'Pagini lipite', tip_afectare: 'deteriorata', data_afectare: date('2024-09-15'), cost_reparare: 40.00})
+CREATE (ca44:Carte_Afectata {id_carte_afectata: 44, descriere_stare: 'Pierduta', tip_afectare: 'pierduta', data_afectare: date('2024-08-20'), cost_reparare: 20.00})
+CREATE (ca45:Carte_Afectata {id_carte_afectata: 45, descriere_stare: 'Deteriorare la colțuri', tip_afectare: 'deteriorata', data_afectare: date('2024-07-25'), cost_reparare: 15.00})
+
+CREATE (fb71:Feedback_Angajat {id_feedback: 71, data_feedback: date('2023-11-10'), feedback: 'Angajat foarte responsabil și eficient.'})
+CREATE (fb72:Feedback_Angajat {id_feedback: 72, data_feedback: date('2024-08-20'), feedback: 'Necesită îmbunătățirea comunicării cu colegii.'})
+CREATE (fb73:Feedback_Angajat {id_feedback: 73, data_feedback: date('2024-09-24'), feedback: 'Lucrează bine sub presiune.'})
+CREATE (fb74:Feedback_Angajat {id_feedback: 74, data_feedback: date('2024-08-19'), feedback: 'Este un angajat dedicat și punctual.'})
+CREATE (fb75:Feedback_Angajat {id_feedback: 75, data_feedback: date('2024-09-15'), feedback: 'Ar trebui să îmbunătățească gestionarea timpului.'})
+CREATE (fb76:Feedback_Angajat {id_feedback: 76, data_feedback: date('2024-07-25'), feedback: 'Este foarte atent la detalii.'})
+CREATE (fb77:Feedback_Angajat {id_feedback: 77, data_feedback: date('2023-10-06'), feedback: 'Comunicarea cu clienții este excepțională.'})
+CREATE (fb78:Feedback_Angajat {id_feedback: 78, data_feedback: date('2023-10-26'), feedback: 'Demonstrând abilități excelente de leadership.'})
+CREATE (fb79:Feedback_Angajat {id_feedback: 79, data_feedback: date('2024-01-08'), feedback: 'Pune un mare accent pe colaborare.'})
+CREATE (fb710:Feedback_Angajat {id_feedback: 710, data_feedback: date('2024-10-10'), feedback: 'Angajat foarte organizat și eficient.'})
+
+CREATE (di61:Detalii_Imprumut {id_detaliu: 61, data_returnare_prevazuta: date('2023-11-24'), data_returnare_realizata: date('2023-11-15')})
+CREATE (di62:Detalii_Imprumut {id_detaliu: 62, data_returnare_prevazuta: date('2023-11-24'), data_returnare_realizata: date('2023-11-15')})
+CREATE (di63:Detalii_Imprumut {id_detaliu: 63, data_returnare_prevazuta: date('2024-08-31'), data_returnare_realizata: date('2024-08-20')})
+CREATE (di64:Detalii_Imprumut {id_detaliu: 64, data_returnare_prevazuta: date('2024-08-31'), data_returnare_realizata: date('2024-08-20')})
+CREATE (di65:Detalii_Imprumut {id_detaliu: 65, data_returnare_prevazuta: date('2024-09-24'), data_returnare_realizata: date('2024-09-24')})
+CREATE (di66:Detalii_Imprumut {id_detaliu: 66, data_returnare_prevazuta: date('2024-09-24'), data_returnare_realizata: date('2024-09-24')})
+CREATE (di67:Detalii_Imprumut {id_detaliu: 67, data_returnare_prevazuta: date('2024-09-24'), data_returnare_realizata: date('2024-09-24')})
+CREATE (di68:Detalii_Imprumut {id_detaliu: 68, data_returnare_prevazuta: date('2024-08-19'), data_returnare_realizata: date('2024-08-19')})
+CREATE (di69:Detalii_Imprumut {id_detaliu: 69, data_returnare_prevazuta: date('2024-08-19'), data_returnare_realizata: date('2024-08-19')})
+CREATE (di610:Detalii_Imprumut {id_detaliu: 610, data_returnare_prevazuta: date('2024-08-03'), data_returnare_realizata: date('2024-08-03')})
+CREATE (di611:Detalii_Imprumut {id_detaliu: 611, data_returnare_prevazuta: date('2024-10-19'), data_returnare_realizata: date('2024-10-10')})
+CREATE (di612:Detalii_Imprumut {id_detaliu: 612, data_returnare_prevazuta: date('2024-10-19'), data_returnare_realizata: date('2024-10-10')})
+CREATE (di613:Detalii_Imprumut {id_detaliu: 613, data_returnare_prevazuta: date('2024-09-23'), data_returnare_realizata: date('2024-09-15')})
+CREATE (di614:Detalii_Imprumut {id_detaliu: 614, data_returnare_prevazuta: date('2024-09-23'), data_returnare_realizata: date('2024-09-15')})
+CREATE (di615:Detalii_Imprumut {id_detaliu: 615, data_returnare_prevazuta: date('2024-09-23'), data_returnare_realizata: date('2024-09-15')})
+CREATE (di616:Detalii_Imprumut {id_detaliu: 616, data_returnare_prevazuta: date('2024-09-23'), data_returnare_realizata: date('2024-09-15')})
+CREATE (di617:Detalii_Imprumut {id_detaliu: 617, data_returnare_prevazuta: date('2024-05-09'), data_returnare_realizata: date('2024-05-09')})
+CREATE (di618:Detalii_Imprumut {id_detaliu: 618, data_returnare_prevazuta: date('2024-05-09'), data_returnare_realizata: date('2024-05-09')})
+CREATE (di619:Detalii_Imprumut {id_detaliu: 619, data_returnare_prevazuta: date('2024-05-09'), data_returnare_realizata: date('2024-05-09')})
+CREATE (di620:Detalii_Imprumut {id_detaliu: 620, data_returnare_prevazuta: date('2024-08-03'), data_returnare_realizata: date('2024-07-25')})
+CREATE (di621:Detalii_Imprumut {id_detaliu: 621, data_returnare_prevazuta: date('2024-02-19'), data_returnare_realizata: date('2024-02-19')})
+CREATE (di622:Detalii_Imprumut {id_detaliu: 622, data_returnare_prevazuta: date('2024-02-19'), data_returnare_realizata: date('2024-02-19')})
+CREATE (di623:Detalii_Imprumut {id_detaliu: 623, data_returnare_prevazuta: date('2024-02-19'), data_returnare_realizata: date('2024-02-19')})
+CREATE (di624:Detalii_Imprumut {id_detaliu: 624, data_returnare_prevazuta: date('2024-02-03'), data_returnare_realizata: date('2024-02-03')})
+CREATE (di625:Detalii_Imprumut {id_detaliu: 625, data_returnare_prevazuta: date('2024-02-03'), data_returnare_realizata: date('2024-02-03')})
+CREATE (di626:Detalii_Imprumut {id_detaliu: 626, data_returnare_prevazuta: date('2024-02-03'), data_returnare_realizata: date('2024-02-03')})
+CREATE (di627:Detalii_Imprumut {id_detaliu: 627, data_returnare_prevazuta: date('2024-01-08'), data_returnare_realizata: date('2024-01-08')})
+CREATE (di628:Detalii_Imprumut {id_detaliu: 628, data_returnare_prevazuta: date('2024-01-08'), data_returnare_realizata: date('2024-01-08')})
+CREATE (di629:Detalii_Imprumut {id_detaliu: 629, data_returnare_prevazuta: date('2023-11-19'), data_returnare_realizata: date('2023-11-19')})
+CREATE (di630:Detalii_Imprumut {id_detaliu: 630, data_returnare_prevazuta: date('2023-11-19'), data_returnare_realizata: date('2023-11-19')})
+CREATE (di631:Detalii_Imprumut {id_detaliu: 631, data_returnare_prevazuta: date('2023-10-26'), data_returnare_realizata: date('2023-10-26')})
+CREATE (di632:Detalii_Imprumut {id_detaliu: 632, data_returnare_prevazuta: date('2023-10-26'), data_returnare_realizata: date('2023-10-26')})
+CREATE (di633:Detalii_Imprumut {id_detaliu: 633, data_returnare_prevazuta: date('2023-10-26'), data_returnare_realizata: date('2023-10-26')})
+CREATE (di634:Detalii_Imprumut {id_detaliu: 634, data_returnare_prevazuta: date('2023-10-06'), data_returnare_realizata: date('2023-10-06')})
+CREATE (di635:Detalii_Imprumut {id_detaliu: 635, data_returnare_prevazuta: date('2023-10-06'), data_returnare_realizata: date('2023-10-06')})
+CREATE (di636:Detalii_Imprumut {id_detaliu: 636, data_returnare_prevazuta: date('2023-10-06'), data_returnare_realizata: date('2023-10-06')})
+CREATE (di637:Detalii_Imprumut {id_detaliu: 637, data_returnare_prevazuta: date('2023-08-29'), data_returnare_realizata: date('2023-08-29')})
+CREATE (di638:Detalii_Imprumut {id_detaliu: 638, data_returnare_prevazuta: date('2023-08-29'), data_returnare_realizata: date('2023-08-29')})
+CREATE (di639:Detalii_Imprumut {id_detaliu: 639, data_returnare_prevazuta: date('2023-08-29'), data_returnare_realizata: date('2023-08-29')})
+CREATE (di640:Detalii_Imprumut {id_detaliu: 640, data_returnare_prevazuta: date('2023-08-29'), data_returnare_realizata: date('2023-08-29')})
+CREATE (di641:Detalii_Imprumut {id_detaliu: 641, data_returnare_prevazuta: date('2023-08-03'), data_returnare_realizata: date('2023-07-22')})
+CREATE (di642:Detalii_Imprumut {id_detaliu: 642, data_returnare_prevazuta: date('2023-06-24'), data_returnare_realizata: date('2023-06-24')})
+CREATE (di643:Detalii_Imprumut {id_detaliu: 643, data_returnare_prevazuta: date('2023-06-24'), data_returnare_realizata: date('2023-06-24')})
+CREATE (di644:Detalii_Imprumut {id_detaliu: 644, data_returnare_prevazuta: date('2023-06-24'), data_returnare_realizata: date('2023-06-24')})
+CREATE (di645:Detalii_Imprumut {id_detaliu: 645, data_returnare_prevazuta: date('2023-06-08'), data_returnare_realizata: date('2023-06-08')})
+CREATE (di646:Detalii_Imprumut {id_detaliu: 646, data_returnare_prevazuta: date('2023-06-08'), data_returnare_realizata: date('2023-06-08')})
+CREATE (di647:Detalii_Imprumut {id_detaliu: 647, data_returnare_prevazuta: date('2023-04-26'), data_returnare_realizata: date('2023-04-26')})
+CREATE (di648:Detalii_Imprumut {id_detaliu: 648, data_returnare_prevazuta: date('2024-11-26'), data_returnare_realizata: null})
+CREATE (di649:Detalii_Imprumut {id_detaliu: 649, data_returnare_prevazuta: date('2024-11-26'), data_returnare_realizata: null})
+CREATE (di650:Detalii_Imprumut {id_detaliu: 650, data_returnare_prevazuta: date('2024-12-26'), data_returnare_realizata: null})
+CREATE (di651:Detalii_Imprumut {id_detaliu: 651, data_returnare_prevazuta: date('2024-12-26'), data_returnare_realizata: null})
+CREATE (di652:Detalii_Imprumut {id_detaliu: 652, data_returnare_prevazuta: date('2024-12-26'), data_returnare_realizata: null})
+CREATE (di653:Detalii_Imprumut {id_detaliu: 653, data_returnare_prevazuta: date('2024-12-06'), data_returnare_realizata: null})
+CREATE (di654:Detalii_Imprumut {id_detaliu: 654, data_returnare_prevazuta: date('2024-12-16'), data_returnare_realizata: null})
+CREATE (di655:Detalii_Imprumut {id_detaliu: 655, data_returnare_prevazuta: date('2024-12-16'), data_returnare_realizata: null})
+CREATE (di656:Detalii_Imprumut {id_detaliu: 656, data_returnare_prevazuta: date('2024-12-19'), data_returnare_realizata: null})
+CREATE (di657:Detalii_Imprumut {id_detaliu: 657, data_returnare_prevazuta: date('2024-12-16'), data_returnare_realizata: null})
+CREATE (di658:Detalii_Imprumut {id_detaliu: 658, data_returnare_prevazuta: date('2024-12-16'), data_returnare_realizata: null})
+CREATE (di659:Detalii_Imprumut {id_detaliu: 659, data_returnare_prevazuta: date('2024-11-03'), data_returnare_realizata: null})
+CREATE (di660:Detalii_Imprumut {id_detaliu: 660, data_returnare_prevazuta: date('2024-11-03'), data_returnare_realizata: null})
+CREATE (di661:Detalii_Imprumut {id_detaliu: 661, data_returnare_prevazuta: date('2024-11-12'), data_returnare_realizata: null})
+CREATE (di662:Detalii_Imprumut {id_detaliu: 662, data_returnare_prevazuta: date('2024-11-12'), data_returnare_realizata: null})
+CREATE (di663:Detalii_Imprumut {id_detaliu: 663, data_returnare_prevazuta: date('2024-12-01'), data_returnare_realizata: null})
+CREATE (di664:Detalii_Imprumut {id_detaliu: 664, data_returnare_prevazuta: date('2024-10-12'), data_returnare_realizata: null})
+
+CREATE (r21:Review {id_review: 21, rating: 5, comentarii: 'Cartea este foarte bine scrisă și utilă.', data_review: date('2024-11-01')})
+CREATE (r22:Review {id_review: 22, rating: 4, comentarii: 'Informativă, dar ar fi putut fi mai detaliată.', data_review: date('2024-10-10')})
+CREATE (r23:Review {id_review: 23, rating: 5, comentarii: 'O lucrare excelentă pentru iubitorii de filozofie.', data_review: date('2024-09-25')})
+CREATE (r24:Review {id_review: 24, rating: 3, comentarii: 'M-a făcut să reflectez la multe aspecte ale vieții.', data_review: date('2024-09-10')})
+CREATE (r25:Review {id_review: 25, rating: 4, comentarii: 'O poveste interesantă, dar finalul nu m-a convins.', data_review: date('2024-08-15')})
+CREATE (r26:Review {id_review: 26, rating: 5, comentarii: 'Cartea mi-a schimbat perspectiva despre știință.', data_review: date('2024-07-30')})
+CREATE (r27:Review {id_review: 27, rating: 3, comentarii: 'Unele părți au fost plictisitoare.', data_review: date('2024-07-01')})
+CREATE (r28:Review {id_review: 28, rating: 4, comentarii: 'Un subiect fascinant, dar stilul de scriere a fost prea tehnic.', data_review: date('2024-06-05')})
+CREATE (r29:Review {id_review: 29, rating: 5, comentarii: 'O poveste care te captivează de la început la sfârșit.', data_review: date('2024-05-12')})CREATE (op6001:Operatiune_Imprumut {id_operatiune: 6001, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2023-11-10T08:30:00')})
+
+CREATE (op6002:Operatiune_Imprumut {id_operatiune: 6002, tip_operatiune: 'Returnare', ora_operatiune: datetime('2023-11-15T10:00:00')})
+CREATE (op6003:Operatiune_Imprumut {id_operatiune: 6003, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-08-17T09:30:00')})
+CREATE (op6004:Operatiune_Imprumut {id_operatiune: 6004, tip_operatiune: 'Returnare', ora_operatiune: datetime('2024-08-20T12:00:00')})
+CREATE (op6005:Operatiune_Imprumut {id_operatiune: 6005, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-09-10T10:45:00')})
+CREATE (op6006:Operatiune_Imprumut {id_operatiune: 6006, tip_operatiune: 'Returnare', ora_operatiune: datetime('2024-09-24T14:00:00')})
+CREATE (op6007:Operatiune_Imprumut {id_operatiune: 6007, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-08-05T11:00:00')})
+CREATE (op6008:Operatiune_Imprumut {id_operatiune: 6008, tip_operatiune: 'Returnare', ora_operatiune: datetime('2024-08-19T16:30:00')})
+CREATE (op6009:Operatiune_Imprumut {id_operatiune: 6009, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-07-20T08:15:00')})
+CREATE (op6010:Operatiune_Imprumut {id_operatiune: 6010, tip_operatiune: 'Returnare', ora_operatiune: datetime('2024-08-03T12:45:00')})
+CREATE (op6011:Operatiune_Imprumut {id_operatiune: 6011, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-10-05T09:00:00')})
+CREATE (op6012:Operatiune_Imprumut {id_operatiune: 6012, tip_operatiune: 'Returnare', ora_operatiune: datetime('2024-10-10T14:30:00')})
+CREATE (op6013:Operatiune_Imprumut {id_operatiune: 6013, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-09-09T15:15:00')})
+CREATE (op6014:Operatiune_Imprumut {id_operatiune: 6014, tip_operatiune: 'Returnare', ora_operatiune: datetime('2024-09-15T11:30:00')})
+CREATE (op6015:Operatiune_Imprumut {id_operatiune: 6015, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-04-25T10:45:00')})
+CREATE (op6016:Operatiune_Imprumut {id_operatiune: 6016, tip_operatiune: 'Returnare', ora_operatiune: datetime('2024-05-09T16:00:00')})
+CREATE (op6017:Operatiune_Imprumut {id_operatiune: 6017, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-07-20T08:30:00')})
+CREATE (op6018:Operatiune_Imprumut {id_operatiune: 6018, tip_operatiune: 'Returnare', ora_operatiune: datetime('2024-07-25T14:15:00')})
+CREATE (op6019:Operatiune_Imprumut {id_operatiune: 6019, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-02-05T12:00:00')})
+CREATE (op6020:Operatiune_Imprumut {id_operatiune: 6020, tip_operatiune: 'Returnare', ora_operatiune: datetime('2024-02-19T13:30:00')})
+CREATE (op6021:Operatiune_Imprumut {id_operatiune: 6021, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-01-20T09:15:00')})
+CREATE (op6022:Operatiune_Imprumut {id_operatiune: 6022, tip_operatiune: 'Returnare', ora_operatiune: datetime('2024-02-03T11:45:00')})
+CREATE (op6023:Operatiune_Imprumut {id_operatiune: 6023, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2023-12-25T14:30:00')})
+CREATE (op6024:Operatiune_Imprumut {id_operatiune: 6024, tip_operatiune: 'Returnare', ora_operatiune: datetime('2024-01-08T15:00:00')})
+CREATE (op6025:Operatiune_Imprumut {id_operatiune: 6025, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2023-11-05T08:00:00')})
+CREATE (op6026:Operatiune_Imprumut {id_operatiune: 6026, tip_operatiune: 'Returnare', ora_operatiune: datetime('2023-11-19T10:30:00')})
+CREATE (op6027:Operatiune_Imprumut {id_operatiune: 6027, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2023-10-12T11:45:00')})
+CREATE (op6028:Operatiune_Imprumut {id_operatiune: 6028, tip_operatiune: 'Returnare', ora_operatiune: datetime('2023-10-26T12:15:00')})
+CREATE (op6029:Operatiune_Imprumut {id_operatiune: 6029, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2023-09-22T09:30:00')})
+CREATE (op6030:Operatiune_Imprumut {id_operatiune: 6030, tip_operatiune: 'Returnare', ora_operatiune: datetime('2023-10-06T16:45:00')})
+CREATE (op6031:Operatiune_Imprumut {id_operatiune: 6031, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2023-08-15T08:30:00')})
+CREATE (op6032:Operatiune_Imprumut {id_operatiune: 6032, tip_operatiune: 'Returnare', ora_operatiune: datetime('2023-08-29T14:30:00')})
+CREATE (op6033:Operatiune_Imprumut {id_operatiune: 6033, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2023-07-20T09:00:00')})
+CREATE (op6034:Operatiune_Imprumut {id_operatiune: 6034, tip_operatiune: 'Returnare', ora_operatiune: datetime('2023-07-22T11:30:00')})
+CREATE (op6035:Operatiune_Imprumut {id_operatiune: 6035, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2023-06-10T10:00:00')})
+CREATE (op6036:Operatiune_Imprumut {id_operatiune: 6036, tip_operatiune: 'Returnare', ora_operatiune: datetime('2023-06-24T14:45:00')})
+CREATE (op6037:Operatiune_Imprumut {id_operatiune: 6037, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2023-05-25T11:15:00')})
+CREATE (op6038:Operatiune_Imprumut {id_operatiune: 6038, tip_operatiune: 'Returnare', ora_operatiune: datetime('2023-06-08T15:00:00')})
+CREATE (op6039:Operatiune_Imprumut {id_operatiune: 6039, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2023-04-12T09:00:00')})
+CREATE (op6040:Operatiune_Imprumut {id_operatiune: 6040, tip_operatiune: 'Returnare', ora_operatiune: datetime('2023-04-26T12:30:00')})
+CREATE (op6041:Operatiune_Imprumut {id_operatiune: 6041, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-11-12T10:30:00')})
+CREATE (op6042:Operatiune_Imprumut {id_operatiune: 6042, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-12-12T11:00:00')})
+CREATE (op6043:Operatiune_Imprumut {id_operatiune: 6043, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-11-22T09:15:00')})
+CREATE (op6044:Operatiune_Imprumut {id_operatiune: 6044, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-12-02T08:45:00')})
+CREATE (op6045:Operatiune_Imprumut {id_operatiune: 6045, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-12-05T10:15:00')})
+CREATE (op6046:Operatiune_Imprumut {id_operatiune: 6046, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-12-02T11:30:00')})
+CREATE (op6047:Operatiune_Imprumut {id_operatiune: 6047, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-10-20T09:00:00')})
+CREATE (op6048:Operatiune_Imprumut {id_operatiune: 6048, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-10-29T14:15:00')})
+CREATE (op6049:Operatiune_Imprumut {id_operatiune: 6049, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-11-17T11:30:00')})
+CREATE (op6050:Operatiune_Imprumut {id_operatiune: 6050, tip_operatiune: 'Imprumut', ora_operatiune: datetime('2024-09-28T12:00:00')})
+
+Relatii
+
+Carte -> Gen (APARTINE_LA)
+
+MATCH (c301:Carte {id_carte: 301}), (g12:Gen {id_gen: 12}) CREATE (c301)-[:APARTINE_LA]->(g12);
+MATCH (c302:Carte {id_carte: 302}), (g13:Gen {id_gen: 13}) CREATE (c302)-[:APARTINE_LA]->(g13);
+MATCH (c303:Carte {id_carte: 303}), (g14:Gen {id_gen: 14}) CREATE (c303)-[:APARTINE_LA]->(g14);
+MATCH (c304:Carte {id_carte: 304}), (g15:Gen {id_gen: 15}) CREATE (c304)-[:APARTINE_LA]->(g15);
+MATCH (c305:Carte {id_carte: 305}), (g16:Gen {id_gen: 16}) CREATE (c305)-[:APARTINE_LA]->(g16);
+MATCH (c306:Carte {id_carte: 306}), (g111:Gen {id_gen: 111}) CREATE (c306)-[:APARTINE_LA]->(g111);
+MATCH (c307:Carte {id_carte: 307}), (g112:Gen {id_gen: 112}) CREATE (c307)-[:APARTINE_LA]->(g112);
+MATCH (c308:Carte {id_carte: 308}), (g18:Gen {id_gen: 18}) CREATE (c308)-[:APARTINE_LA]->(g18);
+MATCH (c309:Carte {id_carte: 309}), (g19:Gen {id_gen: 19}) CREATE (c309)-[:APARTINE_LA]->(g19);
+MATCH (c3010:Carte {id_carte: 3010}), (g17:Gen {id_gen: 17}) CREATE (c3010)-[:APARTINE_LA]->(g17);
+MATCH (c3011:Carte {id_carte: 3011}), (g119:Gen {id_gen: 119}) CREATE (c3011)-[:APARTINE_LA]->(g119);
+MATCH (c3012:Carte {id_carte: 3012}), (g120:Gen {id_gen: 120}) CREATE (c3012)-[:APARTINE_LA]->(g120);
+MATCH (c3013:Carte {id_carte: 3013}), (g118:Gen {id_gen: 118}) CREATE (c3013)-[:APARTINE_LA]->(g118);
+MATCH (c3014:Carte {id_carte: 3014}), (g113:Gen {id_gen: 113}) CREATE (c3014)-[:APARTINE_LA]->(g113);
+MATCH (c3015:Carte {id_carte: 3015}), (g114:Gen {id_gen: 114}) CREATE (c3015)-[:APARTINE_LA]->(g114);
+MATCH (c3016:Carte {id_carte: 3016}), (g115:Gen {id_gen: 115}) CREATE (c3016)-[:APARTINE_LA]->(g115);
+MATCH (c3017:Carte {id_carte: 3017}), (g116:Gen {id_gen: 116}) CREATE (c3017)-[:APARTINE_LA]->(g116);
+MATCH (c3018:Carte {id_carte: 3018}), (g117:Gen {id_gen: 117}) CREATE (c3018)-[:APARTINE_LA]->(g117);
+MATCH (c3019:Carte {id_carte: 3019}), (g110:Gen {id_gen: 110}) CREATE (c3019)-[:APARTINE_LA]->(g110);
+MATCH (c3020:Carte {id_carte: 3020}), (g14:Gen {id_gen: 14}) CREATE (c3020)-[:APARTINE_LA]->(g14);
+
+Relații Carte -> Editura (PUBLICATA_DE)
+
+MATCH (c301:Carte {id_carte: 301}), (e208:Editura {id_editura: 208}) CREATE (c301)-[:PUBLICATA_DE]->(e208);
+MATCH (c302:Carte {id_carte: 302}), (e206:Editura {id_editura: 206}) CREATE (c302)-[:PUBLICATA_DE]->(e206);
+MATCH (c303:Carte {id_carte: 303}), (e205:Editura {id_editura: 205}) CREATE (c303)-[:PUBLICATA_DE]->(e205);
+MATCH (c304:Carte {id_carte: 304}), (e204:Editura {id_editura: 204}) CREATE (c304)-[:PUBLICATA_DE]->(e204);
+MATCH (c305:Carte {id_carte: 305}), (e205:Editura {id_editura: 205}) CREATE (c305)-[:PUBLICATA_DE]->(e205);
+MATCH (c306:Carte {id_carte: 306}), (e209:Editura {id_editura: 209}) CREATE (c306)-[:PUBLICATA_DE]->(e209);
+MATCH (c307:Carte {id_carte: 307}), (e2017:Editura {id_editura: 2017}) CREATE (c307)-[:PUBLICATA_DE]->(e2017);
+MATCH (c308:Carte {id_carte: 308}), (e2020:Editura {id_editura: 2020}) CREATE (c308)-[:PUBLICATA_DE]->(e2020);
+MATCH (c309:Carte {id_carte: 309}), (e2016:Editura {id_editura: 2016}) CREATE (c309)-[:PUBLICATA_DE]->(e2016);
+MATCH (c3010:Carte {id_carte: 3010}), (e2015:Editura {id_editura: 2015}) CREATE (c3010)-[:PUBLICATA_DE]->(e2015);
+MATCH (c3011:Carte {id_carte: 3011}), (e2013:Editura {id_editura: 2013}) CREATE (c3011)-[:PUBLICATA_DE]->(e2013);
+MATCH (c3012:Carte {id_carte: 3012}), (e2014:Editura {id_editura: 2014}) CREATE (c3012)-[:PUBLICATA_DE]->(e2014);
+MATCH (c3013:Carte {id_carte: 3013}), (e2011:Editura {id_editura: 2011}) CREATE (c3013)-[:PUBLICATA_DE]->(e2011);
+MATCH (c3014:Carte {id_carte: 3014}), (e208:Editura {id_editura: 208}) CREATE (c3014)-[:PUBLICATA_DE]->(e208);
+MATCH (c3015:Carte {id_carte: 3015}), (e2019:Editura {id_editura: 2019}) CREATE (c3015)-[:PUBLICATA_DE]->(e2019);
+MATCH (c3016:Carte {id_carte: 3016}), (e2011:Editura {id_editura: 2011}) CREATE (c3016)-[:PUBLICATA_DE]->(e2011);
+MATCH (c3017:Carte {id_carte: 3017}), (e2012:Editura {id_editura: 2012}) CREATE (c3017)-[:PUBLICATA_DE]->(e2012);
+MATCH (c3018:Carte {id_carte: 3018}), (e2010:Editura {id_editura: 2010}) CREATE (c3018)-[:PUBLICATA_DE]->(e2010);
+MATCH (c3019:Carte {id_carte: 3019}), (e2018:Editura {id_editura: 2018}) CREATE (c3019)-[:PUBLICATA_DE]->(e2018);
+
+Relații Carte -> Autor (SCRIS_DE) (din Autori_Carte)
+MATCH (a101:Autor {id_autor: 101}), (c301:Carte {id_carte: 301}) CREATE (a101)-[:SCRIS_DE]->(c301);
+MATCH (a102:Autor {id_autor: 102}), (c302:Carte {id_carte: 302}) CREATE (a102)-[:SCRIS_DE]->(c302);
+MATCH (a103:Autor {id_autor: 103}), (c303:Carte {id_carte: 303}) CREATE (a103)-[:SCRIS_DE]->(c303);
+MATCH (a104:Autor {id_autor: 104}), (c304:Carte {id_carte: 304}) CREATE (a104)-[:SCRIS_DE]->(c304);
+MATCH (a105:Autor {id_autor: 105}), (c305:Carte {id_carte: 305}) CREATE (a105)-[:SCRIS_DE]->(c305);
+MATCH (a106:Autor {id_autor: 106}), (c306:Carte {id_carte: 306}) CREATE (a106)-[:SCRIS_DE]->(c306);
+MATCH (a107:Autor {id_autor: 107}), (c307:Carte {id_carte: 307}) CREATE (a107)-[:SCRIS_DE]->(c307);
+MATCH (a108:Autor {id_autor: 108}), (c308:Carte {id_carte: 308}) CREATE (a108)-[:SCRIS_DE]->(c308);
+MATCH (a109:Autor {id_autor: 109}), (c309:Carte {id_carte: 309}) CREATE (a109)-[:SCRIS_DE]->(c309);
+MATCH (a1010:Autor {id_autor: 1010}), (c3010:Carte {id_carte: 3010}) CREATE (a1010)-[:SCRIS_DE]->(c3010);
+MATCH (a1011:Autor {id_autor: 1011}), (c3011:Carte {id_carte: 3011}) CREATE (a1011)-[:SCRIS_DE]->(c3011);
+MATCH (a1012:Autor {id_autor: 1012}), (c3012:Carte {id_carte: 3012}) CREATE (a1012)-[:SCRIS_DE]->(c3012);
+MATCH (a1013:Autor {id_autor: 1013}), (c3013:Carte {id_carte: 3013}) CREATE (a1013)-[:SCRIS_DE]->(c3013);
+MATCH (a1014:Autor {id_autor: 1014}), (c3014:Carte {id_carte: 3014}) CREATE (a1014)-[:SCRIS_DE]->(c3014);
+MATCH (a1015:Autor {id_autor: 1015}), (c3015:Carte {id_carte: 3015}) CREATE (a1015)-[:SCRIS_DE]->(c3015);
+MATCH (a1016:Autor {id_autor: 1016}), (c3016:Carte {id_carte: 3016}) CREATE (a1016)-[:SCRIS_DE]->(c3016);
+MATCH (a1017:Autor {id_autor: 1017}), (c3017:Carte {id_carte: 3017}) CREATE (a1017)-[:SCRIS_DE]->(c3017);
+MATCH (a1018:Autor {id_autor: 1018}), (c3018:Carte {id_carte: 3018}) CREATE (a1018)-[:SCRIS_DE]->(c3018);
+MATCH (a1019:Autor {id_autor: 1019}), (c3019:Carte {id_carte: 3019}) CREATE (a1019)-[:SCRIS_DE]->(c3019);
+MATCH (a1020:Autor {id_autor: 1020}), (c3020:Carte {id_carte: 3020}) CREATE (a1020)-[:SCRIS_DE]->(c3020);
+
+Relații Periodic -> Editura (PUBLICATA_DE)MATCH (p401:Periodic {id_periodic: 401}), (e206:Editura {id_editura: 206}) CREATE (p401)-[:PUBLICATA_DE]->(e206);
+MATCH (p402:Periodic {id_periodic: 402}), (e208:Editura {id_editura: 208}) CREATE (p402)-[:PUBLICATA_DE]->(e208);
+MATCH (p403:Periodic {id_periodic: 403}), (e2020:Editura {id_editura: 2020}) CREATE (p403)-[:PUBLICATA_DE]->(e2020);
+MATCH (p404:Periodic {id_periodic: 404}), (e204:Editura {id_editura: 204}) CREATE (p404)-[:PUBLICATA_DE]->(e204);
+MATCH (p405:Periodic {id_periodic: 405}), (e205:Editura {id_editura: 205}) CREATE (p405)-[:PUBLICATA_DE]->(e205);
+MATCH (p406:Periodic {id_periodic: 406}), (e204:Editura {id_editura: 204}) CREATE (p406)-[:PUBLICATA_DE]->(e204);
+MATCH (p407:Periodic {id_periodic: 407}), (e206:Editura {id_editura: 206}) CREATE (p407)-[:PUBLICATA_DE]->(e206);
+MATCH (p408:Periodic {id_periodic: 408}), (e208:Editura {id_editura: 208}) CREATE (p408)-[:PUBLICATA_DE]->(e208);
+MATCH (p409:Periodic {id_periodic: 409}), (e205:Editura {id_editura: 205}) CREATE (p409)-[:PUBLICATA_DE]->(e205);
+MATCH (p4010:Periodic {id_periodic: 4010}), (e2020:Editura {id_editura: 2020}) CREATE (p4010)-[:PUBLICATA_DE]->(e2020);
+MATCH (p4011:Periodic {id_periodic: 4011}), (e209:Editura {id_editura: 209}) CREATE (p4011)-[:PUBLICATA_DE]->(e209);
+MATCH (p4012:Periodic {id_periodic: 4012}), (e208:Editura {id_editura: 208}) CREATE (p4012)-[:PUBLICATA_DE]->(e208);
+MATCH (p4013:Periodic {id_periodic: 4013}), (e2010:Editura {id_editura: 2010}) CREATE (p4013)-[:PUBLICATA_DE]->(e2010);
+MATCH (p4014:Periodic {id_periodic: 4014}), (e2012:Editura {id_editura: 2012}) CREATE (p4014)-[:PUBLICATA_DE]->(e2012);
+MATCH (p4015:Periodic {id_periodic: 4015}), (e2016:Editura {id_editura: 2016}) CREATE (p4015)-[:PUBLICATA_DE]->(e2016);
+MATCH (p4016:Periodic {id_periodic: 4016}), (e206:Editura {id_editura: 206}) CREATE (p4016)-[:PUBLICATA_DE]->(e206);
+MATCH (p4017:Periodic {id_periodic: 4017}), (e208:Editura {id_editura: 208}) CREATE (p4017)-[:PUBLICATA_DE]->(e208);
+MATCH (p4018:Periodic {id_periodic: 4018}), (e2011:Editura {id_editura: 2011}) CREATE (p4018)-[:PUBLICATA_DE]->(e2011);
+MATCH (p4019:Periodic {id_periodic: 4019}), (e2013:Editura {id_editura: 2013}) CREATE (p4019)-[:PUBLICATA_DE]->(e2013);
+MATCH (p4020:Periodic {id_periodic: 4020}), (e204:Editura {id_editura: 204}) CREATE (p4020)-[:PUBLICATA_DE]->(e204);
+
+Relații Detalii_Periodice -> Periodic (DETAILI_AZI)
+MATCH (dp41:Detalii_Periodice {id_detaliu_periodic: 41}), (p401:Periodic {id_periodic: 401}) CREATE (dp41)-[:DETAILI_AZI]->(p401);
+MATCH (dp42:Detalii_Periodice {id_detaliu_periodic: 42}), (p402:Periodic {id_periodic: 402}) CREATE (dp42)-[:DETAILI_AZI]->(p402);
+MATCH (dp43:Detalii_Periodice {id_detaliu_periodic: 43}), (p403:Periodic {id_periodic: 403}) CREATE (dp43)-[:DETAILI_AZI]->(p403);
+MATCH (dp44:Detalii_Periodice {id_detaliu_periodic: 44}), (p404:Periodic {id_periodic: 404}) CREATE (dp44)-[:DETAILI_AZI]->(p404);
+MATCH (dp45:Detalii_Periodice {id_detaliu_periodic: 45}), (p405:Periodic {id_periodic: 405}) CREATE (dp45)-[:DETAILI_AZI]->(p405);
+MATCH (dp46:Detalii_Periodice {id_detaliu_periodic: 46}), (p406:Periodic {id_periodic: 406}) CREATE (dp46)-[:DETAILI_AZI]->(p406);
+MATCH (dp47:Detalii_Periodice {id_detaliu_periodic: 47}), (p407:Periodic {id_periodic: 407}) CREATE (dp47)-[:DETAILI_AZI]->(p407);
+MATCH (dp48:Detalii_Periodice {id_detaliu_periodic: 48}), (p408:Periodic {id_periodic: 408}) CREATE (dp48)-[:DETAILI_AZI]->(p408);
+MATCH (dp49:Detalii_Periodice {id_detaliu_periodic: 49}), (p409:Periodic {id_periodic: 409}) CREATE (dp49)-[:DETAILI_AZI]->(p409);
+MATCH (dp410:Detalii_Periodice {id_detaliu_periodic: 410}), (p4010:Periodic {id_periodic: 4010}) CREATE (dp410)-[:DETAILI_AZI]->(p4010);
+MATCH (dp411:Detalii_Periodice {id_detaliu_periodic: 411}), (p4011:Periodic {id_periodic: 4011}) CREATE (dp411)-[:DETAILI_AZI]->(p4011);
+MATCH (dp412:Detalii_Periodice {id_detaliu_periodic: 412}), (p4012:Periodic {id_periodic: 4012}) CREATE (dp412)-[:DETAILI_AZI]->(p4012);
+MATCH (dp413:Detalii_Periodice {id_detaliu_periodic: 413}), (p4013:Periodic {id_periodic: 4013}) CREATE (dp413)-[:DETAILI_AZI]->(p4013);
+MATCH (dp414:Detalii_Periodice {id_detaliu_periodic: 414}), (p4014:Periodic {id_periodic: 4014}) CREATE (dp414)-[:DETAILI_AZI]->(p4014);
+MATCH (dp415:Detalii_Periodice {id_detaliu_periodic: 415}), (p4015:Periodic {id_periodic: 4015}) CREATE (dp415)-[:DETAILI_AZI]->(p4015);
+MATCH (dp416:Detalii_Periodice {id_detaliu_periodic: 416}), (p4016:Periodic {id_periodic: 4016}) CREATE (dp416)-[:DETAILI_AZI]->(p4016);
+MATCH (dp417:Detalii_Periodice {id_detaliu_periodic: 417}), (p4017:Periodic {id_periodic: 4017}) CREATE (dp417)-[:DETAILI_AZI]->(p4017);
+MATCH (dp418:Detalii_Periodice {id_detaliu_periodic: 418}), (p4018:Periodic {id_periodic: 4018}) CREATE (dp418)-[:DETAILI_AZI]->(p4018);
+MATCH (dp419:Detalii_Periodice {id_detaliu_periodic: 419}), (p4019:Periodic {id_periodic: 4019}) CREATE (dp419)-[:DETAILI_AZI]->(p4019);
+MATCH (dp420:Detalii_Periodice {id_detaliu_periodic: 420}), (p4020:Periodic {id_periodic: 4020}) CREATE (dp420)-[:DETAILI_AZI]->(p4020);
+
+Relații Cititor -> Categorie_Cititor (APARTINE_LA)
+MATCH (cit8011:Cititor {id_cititor: 8011}), (cc81:Categorie_Cititor {id_categorie: 81}) CREATE (cit8011)-[:APARTINE_LA]->(cc81);
+MATCH (cit8012:Cititor {id_cititor: 8012}), (cc83:Categorie_Cititor {id_categorie: 83}) CREATE (cit8012)-[:APARTINE_LA]->(cc83);
+MATCH (cit8013:Cititor {id_cititor: 8013}), (cc85:Categorie_Cititor {id_categorie: 85}) CREATE (cit8013)-[:APARTINE_LA]->(cc85);
+MATCH (cit8014:Cititor {id_cititor: 8014}), (cc81:Categorie_Cititor {id_categorie: 81}) CREATE (cit8014)-[:APARTINE_LA]->(cc81);
+MATCH (cit8015:Cititor {id_cititor: 8015}), (cc81:Categorie_Cititor {id_categorie: 81}) CREATE (cit8015)-[:APARTINE_LA]->(cc81);
+MATCH (cit8016:Cititor {id_cititor: 8016}), (cc82:Categorie_Cititor {id_categorie: 82}) CREATE (cit8016)-[:APARTINE_LA]->(cc82);
+MATCH (cit8017:Cititor {id_cititor: 8017}), (cc83:Categorie_Cititor {id_categorie: 83}) CREATE (cit8017)-[:APARTINE_LA]->(cc83);
+MATCH (cit8018:Cititor {id_cititor: 8018}), (cc81:Categorie_Cititor {id_categorie: 81}) CREATE (cit8018)-[:APARTINE_LA]->(cc81);
+MATCH (cit8019:Cititor {id_cititor: 8019}), (cc84:Categorie_Cititor {id_categorie: 84}) CREATE (cit8019)-[:APARTINE_LA]->(cc84);
+MATCH (cit8020:Cititor {id_cititor: 8020}), (cc82:Categorie_Cititor {id_categorie: 82}) CREATE (cit8020)-[:APARTINE_LA]->(cc82);
+MATCH (cit8021:Cititor {id_cititor: 8021}), (cc83:Categorie_Cititor {id_categorie: 83}) CREATE (cit8021)-[:APARTINE_LA]->(cc83);
+MATCH (cit8022:Cititor {id_cititor: 8022}), (cc84:Categorie_Cititor {id_categorie: 84}) CREATE (cit8022)-[:APARTINE_LA]->(cc84);
+MATCH (cit8023:Cititor {id_cititor: 8023}), (cc82:Categorie_Cititor {id_categorie: 82}) CREATE (cit8023)-[:APARTINE_LA]->(cc82);
+MATCH (cit8024:Cititor {id_cititor: 8024}), (cc81:Categorie_Cititor {id_categorie: 81}) CREATE (cit8024)-[:APARTINE_LA]->(cc81);
+MATCH (cit8025:Cititor {id_cititor: 8025}), (cc83:Categorie_Cititor {id_categorie: 83}) CREATE (cit8025)-[:APARTINE_LA]->(cc83);
+
+Relații Copie_Carte -> Carte (COPIE_A)
+MATCH (cop55:Copie_Carte {id_copie: 55}), (c301:Carte {id_carte: 301}) CREATE (cop55)-[:COPIE_A]->(c301);
+MATCH (cop56:Copie_Carte {id_copie: 56}), (c301:Carte {id_carte: 301}) CREATE (cop56)-[:COPIE_A]->(c301);
+MATCH (cop57:Copie_Carte {id_copie: 57}), (c301:Carte {id_carte: 301}) CREATE (cop57)-[:COPIE_A]->(c301);
+MATCH (cop58:Copie_Carte {id_copie: 58}), (c301:Carte {id_carte: 301}) CREATE (cop58)-[:COPIE_A]->(c301);
+MATCH (cop59:Copie_Carte {id_copie: 59}), (c301:Carte {id_carte: 301}) CREATE (cop59)-[:COPIE_A]->(c301);
+MATCH (cop510:Copie_Carte {id_copie: 510}), (c302:Carte {id_carte: 302}) CREATE (cop510)-[:COPIE_A]->(c302);
+MATCH (cop511:Copie_Carte {id_copie: 511}), (c302:Carte {id_carte: 302}) CREATE (cop511)-[:COPIE_A]->(c302);
+MATCH (cop512:Copie_Carte {id_copie: 512}), (c302:Carte {id_carte: 302}) CREATE (cop512)-[:COPIE_A]->(c302);
+MATCH (cop513:Copie_Carte {id_copie: 513}), (c302:Carte {id_carte: 302}) CREATE (cop513)-[:COPIE_A]->(c302);
+MATCH (cop514:Copie_Carte {id_copie: 514}), (c302:Carte {id_carte: 302}) CREATE (cop514)-[:COPIE_A]->(c302);
+MATCH (cop515:Copie_Carte {id_copie: 515}), (c303:Carte {id_carte: 303}) CREATE (cop515)-[:COPIE_A]->(c303);
+MATCH (cop516:Copie_Carte {id_copie: 516}), (c303:Carte {id_carte: 303}) CREATE (cop516)-[:COPIE_A]->(c303);
+MATCH (cop517:Copie_Carte {id_copie: 517}), (c303:Carte {id_carte: 303}) CREATE (cop517)-[:COPIE_A]->(c303);
+MATCH (cop518:Copie_Carte {id_copie: 518}), (c303:Carte {id_carte: 303}) CREATE (cop518)-[:COPIE_A]->(c303);
+MATCH (cop519:Copie_Carte {id_copie: 519}), (c303:Carte {id_carte: 303}) CREATE (cop519)-[:COPIE_A]->(c303);
+MATCH (cop520:Copie_Carte {id_copie: 520}), (c304:Carte {id_carte: 304}) CREATE (cop520)-[:COPIE_A]->(c304);
+MATCH (cop521:Copie_Carte {id_copie: 521}), (c304:Carte {id_carte: 304}) CREATE (cop521)-[:COPIE_A]->(c304);
+MATCH (cop522:Copie_Carte {id_copie: 522}), (c304:Carte {id_carte: 304}) CREATE (cop522)-[:COPIE_A]->(c304);
+MATCH (cop523:Copie_Carte {id_copie: 523}), (c304:Carte {id_carte: 304}) CREATE (cop523)-[:COPIE_A]->(c304);
+MATCH (cop524:Copie_Carte {id_copie: 524}), (c304:Carte {id_carte: 304}) CREATE (cop524)-[:COPIE_A]->(c304);
+MATCH (cop525:Copie_Carte {id_copie: 525}), (c305:Carte {id_carte: 305}) CREATE (cop525)-[:COPIE_A]->(c305);
+MATCH (cop526:Copie_Carte {id_copie: 526}), (c305:Carte {id_carte: 305}) CREATE (cop526)-[:COPIE_A]->(c305);
+MATCH (cop527:Copie_Carte {id_copie: 527}), (c305:Carte {id_carte: 305}) CREATE (cop527)-[:COPIE_A]->(c305);
+MATCH (cop528:Copie_Carte {id_copie: 528}), (c305:Carte {id_carte: 305}) CREATE (cop528)-[:COPIE_A]->(c305);
+MATCH (cop529:Copie_Carte {id_copie: 529}), (c305:Carte {id_carte: 305}) CREATE (cop529)-[:COPIE_A]->(c305);
+MATCH (cop530:Copie_Carte {id_copie: 530}), (c306:Carte {id_carte: 306}) CREATE (cop530)-[:COPIE_A]->(c306);
+MATCH (cop531:Copie_Carte {id_copie: 531}), (c306:Carte {id_carte: 306}) CREATE (cop531)-[:COPIE_A]->(c306);
+MATCH (cop532:Copie_Carte {id_copie: 532}), (c306:Carte {id_carte: 306}) CREATE (cop532)-[:COPIE_A]->(c306);
+MATCH (cop533:Copie_Carte {id_copie: 533}), (c306:Carte {id_carte: 306}) CREATE (cop533)-[:COPIE_A]->(c306);
+MATCH (cop534:Copie_Carte {id_copie: 534}), (c306:Carte {id_carte: 306}) CREATE (cop534)-[:COPIE_A]->(c306);
+MATCH (cop535:Copie_Carte {id_copie: 535}), (c307:Carte {id_carte: 307}) CREATE (cop535)-[:COPIE_A]->(c307);
+MATCH (cop536:Copie_Carte {id_copie: 536}), (c307:Carte {id_carte: 307}) CREATE (cop536)-[:COPIE_A]->(c307);
+MATCH (cop537:Copie_Carte {id_copie: 537}), (c307:Carte {id_carte: 307}) CREATE (cop537)-[:COPIE_A]->(c307);
+MATCH (cop538:Copie_Carte {id_copie: 538}), (c307:Carte {id_carte: 307}) CREATE (cop538)-[:COPIE_A]->(c307);
+MATCH (cop539:Copie_Carte {id_copie: 539}), (c307:Carte {id_carte: 307}) CREATE (cop539)-[:COPIE_A]->(c307);
+MATCH (cop540:Copie_Carte {id_copie: 540}), (c308:Carte {id_carte: 308}) CREATE (cop540)-[:COPIE_A]->(c308);
+MATCH (cop541:Copie_Carte {id_copie: 541}), (c308:Carte {id_carte: 308}) CREATE (cop541)-[:COPIE_A]->(c308);
+MATCH (cop542:Copie_Carte {id_copie: 542}), (c308:Carte {id_carte: 308}) CREATE (cop542)-[:COPIE_A]->(c308);
+MATCH (cop543:Copie_Carte {id_copie: 543}), (c308:Carte {id_carte: 308}) CREATE (cop543)-[:COPIE_A]->(c308);
+MATCH (cop544:Copie_Carte {id_copie: 544}), (c308:Carte {id_carte: 308}) CREATE (cop544)-[:COPIE_A]->(c308);
+MATCH (cop545:Copie_Carte {id_copie: 545}), (c309:Carte {id_carte: 309}) CREATE (cop545)-[:COPIE_A]->(c309);
+MATCH (cop546:Copie_Carte {id_copie: 546}), (c309:Carte {id_carte: 309}) CREATE (cop546)-[:COPIE_A]->(c309);
+MATCH (cop547:Copie_Carte {id_copie: 547}), (c309:Carte {id_carte: 309}) CREATE (cop547)-[:COPIE_A]->(c309);
+MATCH (cop548:Copie_Carte {id_copie: 548}), (c309:Carte {id_carte: 309}) CREATE (cop548)-[:COPIE_A]->(c309);
+MATCH (cop549:Copie_Carte {id_copie: 549}), (c309:Carte {id_carte: 309}) CREATE (cop549)-[:COPIE_A]->(c309);
+MATCH (cop550:Copie_Carte {id_copie: 550}), (c3010:Carte {id_carte: 3010}) CREATE (cop550)-[:COPIE_A]->(c3010);
+MATCH (cop551:Copie_Carte {id_copie: 551}), (c3010:Carte {id_carte: 3010}) CREATE (cop551)-[:COPIE_A]->(c3010);
+MATCH (cop552:Copie_Carte {id_copie: 552}), (c3010:Carte {id_carte: 3010}) CREATE (cop552)-[:COPIE_A]->(c3010);
+MATCH (cop553:Copie_Carte {id_copie: 553}), (c3010:Carte {id_carte: 3010}) CREATE (cop553)-[:COPIE_A]->(c3010);
+MATCH (cop554:Copie_Carte {id_copie: 554}), (c3010:Carte {id_carte: 3010}) CREATE (cop554)-[:COPIE_A]->(c3010);
+
+Relații Imprumut -> Angajat (GESTIONAT_DE)
+MATCH (imp601:Imprumut {id_imprumut: 601}), (ang707:Angajat {id_angajat: 707}) CREATE (ang707)-[:GESTIONAT_DE]->(imp601);
+MATCH (imp602:Imprumut {id_imprumut: 602}), (ang704:Angajat {id_angajat: 704}) CREATE (ang704)-[:GESTIONAT_DE]->(imp602);
+MATCH (imp603:Imprumut {id_imprumut: 603}), (ang704:Angajat {id_angajat: 704}) CREATE (ang704)-[:GESTIONAT_DE]->(imp603);
+MATCH (imp604:Imprumut {id_imprumut: 604}), (ang707:Angajat {id_angajat: 707}) CREATE (ang707)-[:GESTIONAT_DE]->(imp604);
+MATCH (imp605:Imprumut {id_imprumut: 605}), (ang7010:Angajat {id_angajat: 7010}) CREATE (ang7010)-[:GESTIONAT_DE]->(imp605);
+MATCH (imp606:Imprumut {id_imprumut: 606}), (ang7010:Angajat {id_angajat: 7010}) CREATE (ang7010)-[:GESTIONAT_DE]->(imp606);
+MATCH (imp607:Imprumut {id_imprumut: 607}), (ang709:Angajat {id_angajat: 709}) CREATE (ang709)-[:GESTIONAT_DE]->(imp607);
+MATCH (imp608:Imprumut {id_imprumut: 608}), (ang708:Angajat {id_angajat: 708}) CREATE (ang708)-[:GESTIONAT_DE]->(imp608);
+MATCH (imp609:Imprumut {id_imprumut: 609}), (ang706:Angajat {id_angajat: 706}) CREATE (ang706)-[:GESTIONAT_DE]->(imp609);
+MATCH (imp6010:Imprumut {id_imprumut: 6010}), (ang706:Angajat {id_angajat: 706}) CREATE (ang706)-[:GESTIONAT_DE]->(imp6010);
+MATCH (imp6011:Imprumut {id_imprumut: 6011}), (ang705:Angajat {id_angajat: 705}) CREATE (ang705)-[:GESTIONAT_DE]->(imp6011);
+MATCH (imp6012:Imprumut {id_imprumut: 6012}), (ang701:Angajat {id_angajat: 701}) CREATE (ang701)-[:GESTIONAT_DE]->(imp6012);
+MATCH (imp6013:Imprumut {id_imprumut: 6013}), (ang702:Angajat {id_angajat: 702}) CREATE (ang702)-[:GESTIONAT_DE]->(imp6013);
+MATCH (imp6014:Imprumut {id_imprumut: 6014}), (ang702:Angajat {id_angajat: 702}) CREATE (ang702)-[:GESTIONAT_DE]->(imp6014);
+MATCH (imp6015:Imprumut {id_imprumut: 6015}), (ang703:Angajat {id_angajat: 703}) CREATE (ang703)-[:GESTIONAT_DE]->(imp6015);
+MATCH (imp6016:Imprumut {id_imprumut: 6016}), (ang703:Angajat {id_angajat: 703}) CREATE (ang703)-[:GESTIONAT_DE]->(imp6016);
+MATCH (imp6017:Imprumut {id_imprumut: 6017}), (ang705:Angajat {id_angajat: 705}) CREATE (ang705)-[:GESTIONAT_DE]->(imp6017);
+MATCH (imp6018:Imprumut {id_imprumut: 6018}), (ang705:Angajat {id_angajat: 705}) CREATE (ang705)-[:GESTIONAT_DE]->(imp6018);
+MATCH (imp6019:Imprumut {id_imprumut: 6019}), (ang706:Angajat {id_angajat: 706}) CREATE (ang706)-[:GESTIONAT_DE]->(imp6019);
+MATCH (imp6020:Imprumut {id_imprumut: 6020}), (ang706:Angajat {id_angajat: 706}) CREATE (ang706)-[:GESTIONAT_DE]->(imp6020);
+MATCH (imp6021:Imprumut {id_imprumut: 6021}), (ang708:Angajat {id_angajat: 708}) CREATE (ang708)-[:GESTIONAT_DE]->(imp6021);
+MATCH (imp6022:Imprumut {id_imprumut: 6022}), (ang709:Angajat {id_angajat: 709}) CREATE (ang709)-[:GESTIONAT_DE]->(imp6022);
+MATCH (imp6023:Imprumut {id_imprumut: 6023}), (ang705:Angajat {id_angajat: 705}) CREATE (ang705)-[:GESTIONAT_DE]->(imp6023);
+MATCH (imp6024:Imprumut {id_imprumut: 6024}), (ang701:Angajat {id_angajat: 701}) CREATE (ang701)-[:GESTIONAT_DE]->(imp6024);
+MATCH (imp6025:Imprumut {id_imprumut: 6025}), (ang705:Angajat {id_angajat: 705}) CREATE (ang705)-[:GESTIONAT_DE]->(imp6025);
+MATCH (imp6026:Imprumut {id_imprumut: 6026}), (ang707:Angajat {id_angajat: 707}) CREATE (ang707)-[:GESTIONAT_DE]->(imp6026);
+MATCH (imp6027:Imprumut {id_imprumut: 6027}), (ang707:Angajat {id_angajat: 707}) CREATE (ang707)-[:GESTIONAT_DE]->(imp6027);
+MATCH (imp6028:Imprumut {id_imprumut: 6028}), (ang703:Angajat {id_angajat: 703}) CREATE (ang703)-[:GESTIONAT_DE]->(imp6028);
+MATCH (imp6029:Imprumut {id_imprumut: 6029}), (ang702:Angajat {id_angajat: 702}) CREATE (ang702)-[:GESTIONAT_DE]->(imp6029);
+MATCH (imp6030:Imprumut {id_imprumut: 6030}), (ang707:Angajat {id_angajat: 707}) CREATE (ang707)-[:GESTIONAT_DE]->(imp6030);
+
+Relații Imprumut -> Cititor (IMPRUMUTAT_DE)
+MATCH (cit8015:Cititor {id_cititor: 8015}), (imp601:Imprumut {id_imprumut: 601}) CREATE (cit8015)-[:IMPRUMUTAT_DE {detalii_carti: [55, 58]}]->(imp601);
+MATCH (cit8020:Cititor {id_cititor: 8020}), (imp602:Imprumut {id_imprumut: 602}) CREATE (cit8020)-[:IMPRUMUTAT_DE {detalii_carti: [58, 55]}]->(imp602);
+MATCH (cit8017:Cititor {id_cititor: 8017}), (imp603:Imprumut {id_imprumut: 603}) CREATE (cit8017)-[:IMPRUMUTAT_DE {detalii_carti: [59, 545, 539]}]->(imp603);
+MATCH (cit8016:Cititor {id_cititor: 8016}), (imp604:Imprumut {id_imprumut: 604}) CREATE (cit8016)-[:IMPRUMUTAT_DE {detalii_carti: [539, 527]}]->(imp604);
+MATCH (cit8011:Cititor {id_cititor: 8011}), (imp605:Imprumut {id_imprumut: 605}) CREATE (cit8011)-[:IMPRUMUTAT_DE {detalii_carti: [55]}]->(imp605);
+MATCH (cit8017:Cititor {id_cititor: 8017}), (imp606:Imprumut {id_imprumut: 606}) CREATE (cit8017)-[:IMPRUMUTAT_DE {detalii_carti: [56, 546]}]->(imp606);
+MATCH (cit8019:Cititor {id_cititor: 8019}), (imp607:Imprumut {id_imprumut: 607}) CREATE (cit8019)-[:IMPRUMUTAT_DE {detalii_carti: [57, 547, 537, 517]}]->(imp607);
+MATCH (cit8024:Cititor {id_cititor: 8024}), (imp608:Imprumut {id_imprumut: 608}) CREATE (cit8024)-[:IMPRUMUTAT_DE {detalii_carti: [548, 542, 528]}]->(imp608);
+MATCH (cit8024:Cititor {id_cititor: 8024}), (imp609:Imprumut {id_imprumut: 609}) CREATE (cit8024)-[:IMPRUMUTAT_DE {detalii_carti: [59]}]->(imp609);
+MATCH (cit8011:Cititor {id_cititor: 8011}), (imp6010:Imprumut {id_imprumut: 6010}) CREATE (cit8011)-[:IMPRUMUTAT_DE {detalii_carti: [510, 512, 522]}]->(imp6010);
+MATCH (cit8015:Cititor {id_cititor: 8015}), (imp6011:Imprumut {id_imprumut: 6011}) CREATE (cit8015)-[:IMPRUMUTAT_DE {detalii_carti: [511, 521, 531]}]->(imp6011);
+MATCH (cit8011:Cititor {id_cititor: 8011}), (imp6012:Imprumut {id_imprumut: 6012}) CREATE (cit8011)-[:IMPRUMUTAT_DE {detalii_carti: [522, 512]}]->(imp6012);
+MATCH (cit8016:Cititor {id_cititor: 8016}), (imp6013:Imprumut {id_imprumut: 6013}) CREATE (cit8016)-[:IMPRUMUTAT_DE {detalii_carti: [513, 523]}]->(imp6013);
+MATCH (cit8018:Cititor {id_cititor: 8018}), (imp6014:Imprumut {id_imprumut: 6014}) CREATE (cit8018)-[:IMPRUMUTAT_DE {detalii_carti: [514, 524, 534]}]->(imp6014);
+MATCH (cit8014:Cititor {id_cititor: 8014}), (imp6015:Imprumut {id_imprumut: 6015}) CREATE (cit8014)-[:IMPRUMUTAT_DE {detalii_carti: [515, 525, 545]}]->(imp6015);
+MATCH (cit8013:Cititor {id_cititor: 8013}), (imp6016:Imprumut {id_imprumut: 6016}) CREATE (cit8013)-[:IMPRUMUTAT_DE {detalii_carti: [516, 536, 526, 546]}]->(imp6016);
+MATCH (cit8019:Cititor {id_cititor: 8019}), (imp6017:Imprumut {id_imprumut: 6017}) CREATE (cit8019)-[:IMPRUMUTAT_DE {detalii_carti: [517]}]->(imp6017);
+MATCH (cit8017:Cititor {id_cititor: 8017}), (imp6018:Imprumut {id_imprumut: 6018}) CREATE (cit8017)-[:IMPRUMUTAT_DE {detalii_carti: [518, 528, 548]}]->(imp6018);
+MATCH (cit8020:Cititor {id_cititor: 8020}), (imp6019:Imprumut {id_imprumut: 6019}) CREATE (cit8020)-[:IMPRUMUTAT_DE {detalii_carti: [519, 549]}]->(imp6019);
+MATCH (cit8012:Cititor {id_cititor: 8012}), (imp6020:Imprumut {id_imprumut: 6020}) CREATE (cit8012)-[:IMPRUMUTAT_DE {detalii_carti: [520]}]->(imp6020);
+MATCH (cit8013:Cititor {id_cititor: 8013}), (imp6021:Imprumut {id_imprumut: 6021}) CREATE (cit8013)-[:IMPRUMUTAT_DE {detalii_carti: [521, 511]}]->(imp6021);
+MATCH (cit8011:Cititor {id_cititor: 8011}), (imp6022:Imprumut {id_imprumut: 6022}) CREATE (cit8011)-[:IMPRUMUTAT_DE {detalii_carti: [529, 549, 519]}]->(imp6022);
+MATCH (cit8014:Cititor {id_cititor: 8014}), (imp6023:Imprumut {id_imprumut: 6023}) CREATE (cit8014)-[:IMPRUMUTAT_DE {detalii_carti: [530]}]->(imp6023);
+MATCH (cit8015:Cititor {id_cititor: 8015}), (imp6024:Imprumut {id_imprumut: 6024}) CREATE (cit8015)-[:IMPRUMUTAT_DE {detalii_carti: [538, 528]}]->(imp6024);
+MATCH (cit8017:Cititor {id_cititor: 8017}), (imp6025:Imprumut {id_imprumut: 6025}) CREATE (cit8017)-[:IMPRUMUTAT_DE {detalii_carti: [539]}]->(imp6025);
+MATCH (cit8019:Cititor {id_cititor: 8019}), (imp6026:Imprumut {id_imprumut: 6026}) CREATE (cit8019)-[:IMPRUMUTAT_DE {detalii_carti: [554, 534]}]->(imp6026);  
+MATCH (cit8020:Cititor {id_cititor: 8020}), (imp6027:Imprumut {id_imprumut: 6027}) CREATE (cit8020)-[:IMPRUMUTAT_DE {detalii_carti: [554, 534]}]->(imp6027);
+MATCH (cit8011:Cititor {id_cititor: 8011}), (imp6028:Imprumut {id_imprumut: 6028}) CREATE (cit8011)-[:IMPRUMUTAT_DE {detalii_carti: [535, 545]}]->(imp6028);
+MATCH (cit8013:Cititor {id_cititor: 8013}), (imp6029:Imprumut {id_imprumut: 6029}) CREATE (cit8013)-[:IMPRUMUTAT_DE {detalii_carti: [536, 526]}]->(imp6029);
+MATCH (cit8014:Cititor {id_cititor: 8014}), (imp6030:Imprumut {id_imprumut: 6030}) CREATE (cit8014)-[:IMPRUMUTAT_DE {detalii_carti: [537, 547]}]->(imp6030);
+MATCH (cit8015:Cititor {id_cititor: 8015}), (imp6031:Imprumut {id_imprumut: 6031}) CREATE (cit8015)-[:IMPRUMUTAT_DE {detalii_carti: [538, 548]}]->(imp6031);
+MATCH (cit8016:Cititor {id_cititor: 8016}), (imp6032:Imprumut {id_imprumut: 6032}) CREATE (cit8016)-[:IMPRUMUTAT_DE {detalii_carti: [539, 549]}]->(imp6032);
+MATCH (cit8017:Cititor {id_cititor: 8017}), (imp6033:Imprumut {id_imprumut: 6033}) CREATE (cit8017)-[:IMPRUMUTAT_DE {detalii_carti: [540, 550]}]->(imp6033);
+MATCH (cit8018:Cititor {id_cititor: 8018}), (imp6034:Imprumut {id_imprumut: 6034}) CREATE (cit8018)-[:IMPRUMUTAT_DE {detalii_carti: [541, 551]}]->(imp6034);
+MATCH (cit8019:Cititor {id_cititor: 8019}), (imp6035:Imprumut {id_imprumut: 6035}) CREATE (cit8019)-[:IMPRUMUTAT_DE {detalii_carti: [542, 552]}]->(imp6035);
+MATCH (cit8020:Cititor {id_cititor: 8020}), (imp6036:Imprumut {id_imprumut: 6036}) CREATE (cit8020)-[:IMPRUMUTAT_DE {detalii_carti: [543, 553]}]->(imp6036);
+MATCH (cit8021:Cititor {id_cititor: 8021}), (imp6037:Imprumut {id_imprumut: 6037}) CREATE (cit8021)-[:IMPRUMUTAT_DE {detalii_carti: [544, 554]}]->(imp6037);
+MATCH (cit8022:Cititor {id_cititor: 8022}), (imp6038:Imprumut {id_imprumut: 6038}) CREATE (cit8022)-[:IMPRUMUTAT_DE {detalii_carti: [545, 535]}]->(imp6038);
+MATCH (cit8023:Cititor {id_cititor: 8023}), (imp6039:Imprumut {id_imprumut: 6039}) CREATE (cit8023)-[:IMPRUMUTAT_DE {detalii_carti: [546, 536]}]->(imp6039);
+MATCH (cit8024:Cititor {id_cititor: 8024}), (imp6040:Imprumut {id_imprumut: 6040}) CREATE (cit8024)-[:IMPRUMUTAT_DE {detalii_carti: [547, 537]}]->(imp6040);
+MATCH (cit8025:Cititor {id_cititor: 8025}), (imp6041:Imprumut {id_imprumut: 6041}) CREATE (cit8025)-[:IMPRUMUTAT_DE {detalii_carti: [548, 538]}]->(imp6041);
+MATCH (cit8011:Cititor {id_cititor: 8011}), (imp6042:Imprumut {id_imprumut: 6042}) CREATE (cit8011)-[:IMPRUMUTAT_DE {detalii_carti: [549, 539]}]->(imp6042);
+MATCH (cit8012:Cititor {id_cititor: 8012}), (imp6043:Imprumut {id_imprumut: 6043}) CREATE (cit8012)-[:IMPRUMUTAT_DE {detalii_carti: [550, 540]}]->(imp6043);
+MATCH (cit8013:Cititor {id_cititor: 8013}), (imp6044:Imprumut {id_imprumut: 6044}) CREATE (cit8013)-[:IMPRUMUTAT_DE {detalii_carti: [551, 541]}]->(imp6044);
+MATCH (cit8014:Cititor {id_cititor: 8014}), (imp6045:Imprumut {id_imprumut: 6045}) CREATE (cit8014)-[:IMPRUMUTAT_DE {detalii_carti: [552, 542]}]->(imp6045);
+MATCH (cit8015:Cititor {id_cititor: 8015}), (imp6046:Imprumut {id_imprumut: 6046}) CREATE (cit8015)-[:IMPRUMUTAT_DE {detalii_carti: [553, 543]}]->(imp6046);
+MATCH (cit8016:Cititor {id_cititor: 8016}), (imp6047:Imprumut {id_imprumut: 6047}) CREATE (cit8016)-[:IMPRUMUTAT_DE {detalii_carti: [554, 544]}]->(imp6047);
+MATCH (cit8017:Cititor {id_cititor: 8017}), (imp6048:Imprumut {id_imprumut: 6048}) CREATE (cit8017)-[:IMPRUMUTAT_DE {detalii_carti: [55, 545]}]->(imp6048);
+MATCH (cit8018:Cititor {id_cititor: 8018}), (imp6049:Imprumut {id_imprumut: 6049}) CREATE (cit8018)-[:IMPRUMUTAT_DE {detalii_carti: [56, 546]}]->(imp6049);
+MATCH (cit8019:Cititor {id_cititor: 8019}), (imp6050:Imprumut {id_imprumut: 6050}) CREATE (cit8019)-[:IMPRUMUTAT_DE {detalii_carti: [57, 547]}]->(imp6050);
+
+REVIEW_PENTRU (Review → Carte)
+// Review → Carte
+MATCH (r21:Review {id_review: 21}), (c301:Carte {id_carte: 301}) CREATE (r21)-[:REVIEW_PENTRU]->(c301);
+MATCH (r22:Review {id_review: 22}), (c302:Carte {id_carte: 302}) CREATE (r22)-[:REVIEW_PENTRU]->(c302);
+MATCH (r23:Review {id_review: 23}), (c303:Carte {id_carte: 303}) CREATE (r23)-[:REVIEW_PENTRU]->(c303);
+MATCH (r24:Review {id_review: 24}), (c304:Carte {id_carte: 304}) CREATE (r24)-[:REVIEW_PENTRU]->(c304);
+MATCH (r25:Review {id_review: 25}), (c305:Carte {id_carte: 305}) CREATE (r25)-[:REVIEW_PENTRU]->(c305);
+MATCH (r26:Review {id_review: 26}), (c306:Carte {id_carte: 306}) CREATE (r26)-[:REVIEW_PENTRU]->(c306);
+MATCH (r27:Review {id_review: 27}), (c307:Carte {id_carte: 307}) CREATE (r27)-[:REVIEW_PENTRU]->(c307);
+MATCH (r28:Review {id_review: 28}), (c308:Carte {id_carte: 308}) CREATE (r28)-[:REVIEW_PENTRU]->(c308);
+MATCH (r29:Review {id_review: 29}), (c309:Carte {id_carte: 309}) CREATE (r29)-[:REVIEW_PENTRU]->(c309);
+
+// Review → Cititor (cine a scris recenzia)
+MATCH (r21:Review {id_review: 21}), (cit8011:Cititor {id_cititor: 8011}) CREATE (cit8011)-[:A_SCRIS_REVIEW]->(r21);
+MATCH (r22:Review {id_review: 22}), (cit8012:Cititor {id_cititor: 8012}) CREATE (cit8012)-[:A_SCRIS_REVIEW]->(r22);
+MATCH (r23:Review {id_review: 23}), (cit8013:Cititor {id_cititor: 8013}) CREATE (cit8013)-[:A_SCRIS_REVIEW]->(r23);
+MATCH (r24:Review {id_review: 24}), (cit8014:Cititor {id_cititor: 8014}) CREATE (cit8014)-[:A_SCRIS_REVIEW]->(r24);
+MATCH (r25:Review {id_review: 25}), (cit8015:Cititor {id_cititor: 8015}) CREATE (cit8015)-[:A_SCRIS_REVIEW]->(r25);
+MATCH (r26:Review {id_review: 26}), (cit8016:Cititor {id_cititor: 8016}) CREATE (cit8016)-[:A_SCRIS_REVIEW]->(r26);
+MATCH (r27:Review {id_review: 27}), (cit8017:Cititor {id_cititor: 8017}) CREATE (cit8017)-[:A_SCRIS_REVIEW]->(r27);
+MATCH (r28:Review {id_review: 28}), (cit8018:Cititor {id_cititor: 8018}) CREATE (cit8018)-[:A_SCRIS_REVIEW]->(r28);
+MATCH (r29:Review {id_review: 29}), (cit8019:Cititor {id_cititor: 8019}) CREATE (cit8019)-[:A_SCRIS_REVIEW]->(r29);
+
+2. OPERATIUNE_PENTRU (Operatiune_Imprumut → Imprumut)
+MATCH (op6001:Operatiune_Imprumut {id_operatiune: 6001}), (imp601:Imprumut {id_imprumut: 601}) CREATE (op6001)-[:OPERATIUNE_PENTRU]->(imp601);
+MATCH (op6002:Operatiune_Imprumut {id_operatiune: 6002}), (imp601:Imprumut {id_imprumut: 601}) CREATE (op6002)-[:OPERATIUNE_PENTRU]->(imp601);
+MATCH (op6003:Operatiune_Imprumut {id_operatiune: 6003}), (imp602:Imprumut {id_imprumut: 602}) CREATE (op6003)-[:OPERATIUNE_PENTRU]->(imp602);
+MATCH (op6004:Operatiune_Imprumut {id_operatiune: 6004}), (imp602:Imprumut {id_imprumut: 602}) CREATE (op6004)-[:OPERATIUNE_PENTRU]->(imp602);
+MATCH (op6005:Operatiune_Imprumut {id_operatiune: 6005}), (imp603:Imprumut {id_imprumut: 603}) CREATE (op6005)-[:OPERATIUNE_PENTRU]->(imp603);
+MATCH (op6006:Operatiune_Imprumut {id_operatiune: 6006}), (imp603:Imprumut {id_imprumut: 603}) CREATE (op6006)-[:OPERATIUNE_PENTRU]->(imp603);
+MATCH (op6007:Operatiune_Imprumut {id_operatiune: 6007}), (imp604:Imprumut {id_imprumut: 604}) CREATE (op6007)-[:OPERATIUNE_PENTRU]->(imp604);
+MATCH (op6008:Operatiune_Imprumut {id_operatiune: 6008}), (imp604:Imprumut {id_imprumut: 604}) CREATE (op6008)-[:OPERATIUNE_PENTRU]->(imp604);
+MATCH (op6009:Operatiune_Imprumut {id_operatiune: 6009}), (imp605:Imprumut {id_imprumut: 605}) CREATE (op6009)-[:OPERATIUNE_PENTRU]->(imp605);
+MATCH (op6010:Operatiune_Imprumut {id_operatiune: 6010}), (imp605:Imprumut {id_imprumut: 605}) CREATE (op6010)-[:OPERATIUNE_PENTRU]->(imp605);
+MATCH (op6011:Operatiune_Imprumut {id_operatiune: 6011}), (imp606:Imprumut {id_imprumut: 606}) CREATE (op6011)-[:OPERATIUNE_PENTRU]->(imp606);
+MATCH (op6012:Operatiune_Imprumut {id_operatiune: 6012}), (imp606:Imprumut {id_imprumut: 606}) CREATE (op6012)-[:OPERATIUNE_PENTRU]->(imp606);
+MATCH (op6013:Operatiune_Imprumut {id_operatiune: 6013}), (imp607:Imprumut {id_imprumut: 607}) CREATE (op6013)-[:OPERATIUNE_PENTRU]->(imp607);
+MATCH (op6014:Operatiune_Imprumut {id_operatiune: 6014}), (imp607:Imprumut {id_imprumut: 607}) CREATE (op6014)-[:OPERATIUNE_PENTRU]->(imp607);
+MATCH (op6015:Operatiune_Imprumut {id_operatiune: 6015}), (imp608:Imprumut {id_imprumut: 608}) CREATE (op6015)-[:OPERATIUNE_PENTRU]->(imp608);
+MATCH (op6016:Operatiune_Imprumut {id_operatiune: 6016}), (imp608:Imprumut {id_imprumut: 608}) CREATE (op6016)-[:OPERATIUNE_PENTRU]->(imp608);
+MATCH (op6017:Operatiune_Imprumut {id_operatiune: 6017}), (imp609:Imprumut {id_imprumut: 609}) CREATE (op6017)-[:OPERATIUNE_PENTRU]->(imp609);
+MATCH (op6018:Operatiune_Imprumut {id_operatiune: 6018}), (imp609:Imprumut {id_imprumut: 609}) CREATE (op6018)-[:OPERATIUNE_PENTRU]->(imp609);
+MATCH (op6019:Operatiune_Imprumut {id_operatiune: 6019}), (imp6010:Imprumut {id_imprumut: 6010}) CREATE (op6019)-[:OPERATIUNE_PENTRU]->(imp6010);
+MATCH (op6020:Operatiune_Imprumut {id_operatiune: 6020}), (imp6010:Imprumut {id_imprumut: 6010}) CREATE (op6020)-[:OPERATIUNE_PENTRU]->(imp6010);
+MATCH (op6021:Operatiune_Imprumut {id_operatiune: 6021}), (imp6011:Imprumut {id_imprumut: 6011}) CREATE (op6021)-[:OPERATIUNE_PENTRU]->(imp6011);
+MATCH (op6022:Operatiune_Imprumut {id_operatiune: 6022}), (imp6011:Imprumut {id_imprumut: 6011}) CREATE (op6022)-[:OPERATIUNE_PENTRU]->(imp6011);
+MATCH (op6023:Operatiune_Imprumut {id_operatiune: 6023}), (imp6012:Imprumut {id_imprumut: 6012}) CREATE (op6023)-[:OPERATIUNE_PENTRU]->(imp6012);
+MATCH (op6024:Operatiune_Imprumut {id_operatiune: 6024}), (imp6012:Imprumut {id_imprumut: 6012}) CREATE (op6024)-[:OPERATIUNE_PENTRU]->(imp6012);
+MATCH (op6025:Operatiune_Imprumut {id_operatiune: 6025}), (imp6013:Imprumut {id_imprumut: 6013}) CREATE (op6025)-[:OPERATIUNE_PENTRU]->(imp6013);
+MATCH (op6026:Operatiune_Imprumut {id_operatiune: 6026}), (imp6013:Imprumut {id_imprumut: 6013}) CREATE (op6026)-[:OPERATIUNE_PENTRU]->(imp6013);
+MATCH (op6027:Operatiune_Imprumut {id_operatiune: 6027}), (imp6014:Imprumut {id_imprumut: 6014}) CREATE (op6027)-[:OPERATIUNE_PENTRU]->(imp6014);
+MATCH (op6028:Operatiune_Imprumut {id_operatiune: 6028}), (imp6014:Imprumut {id_imprumut: 6014}) CREATE (op6028)-[:OPERATIUNE_PENTRU]->(imp6014);
+MATCH (op6029:Operatiune_Imprumut {id_operatiune: 6029}), (imp6015:Imprumut {id_imprumut: 6015}) CREATE (op6029)-[:OPERATIUNE_PENTRU]->(imp6015);
+MATCH (op6030:Operatiune_Imprumut {id_operatiune: 6030}), (imp6015:Imprumut {id_imprumut: 6015}) CREATE (op6030)-[:OPERATIUNE_PENTRU]->(imp6015);
+MATCH (op6031:Operatiune_Imprumut {id_operatiune: 6031}), (imp6016:Imprumut {id_imprumut: 6016}) CREATE (op6031)-[:OPERATIUNE_PENTRU]->(imp6016);
+MATCH (op6032:Operatiune_Imprumut {id_operatiune: 6032}), (imp6016:Imprumut {id_imprumut: 6016}) CREATE (op6032)-[:OPERATIUNE_PENTRU]->(imp6016);
+MATCH (op6033:Operatiune_Imprumut {id_operatiune: 6033}), (imp6017:Imprumut {id_imprumut: 6017}) CREATE (op6033)-[:OPERATIUNE_PENTRU]->(imp6017);
+MATCH (op6034:Operatiune_Imprumut {id_operatiune: 6034}), (imp6017:Imprumut {id_imprumut: 6017}) CREATE (op6034)-[:OPERATIUNE_PENTRU]->(imp6017);
+MATCH (op6035:Operatiune_Imprumut {id_operatiune: 6035}), (imp6018:Imprumut {id_imprumut: 6018}) CREATE (op6035)-[:OPERATIUNE_PENTRU]->(imp6018);
+MATCH (op6036:Operatiune_Imprumut {id_operatiune: 6036}), (imp6018:Imprumut {id_imprumut: 6018}) CREATE (op6036)-[:OPERATIUNE_PENTRU]->(imp6018);
+MATCH (op6037:Operatiune_Imprumut {id_operatiune: 6037}), (imp6019:Imprumut {id_imprumut: 6019}) CREATE (op6037)-[:OPERATIUNE_PENTRU]->(imp6019);
+MATCH (op6038:Operatiune_Imprumut {id_operatiune: 6038}), (imp6019:Imprumut {id_imprumut: 6019}) CREATE (op6038)-[:OPERATIUNE_PENTRU]->(imp6019);
+MATCH (op6039:Operatiune_Imprumut {id_operatiune: 6039}), (imp6020:Imprumut {id_imprumut: 6020}) CREATE (op6039)-[:OPERATIUNE_PENTRU]->(imp6020);
+MATCH (op6040:Operatiune_Imprumut {id_operatiune: 6040}), (imp6020:Imprumut {id_imprumut: 6020}) CREATE (op6040)-[:OPERATIUNE_PENTRU]->(imp6020);
+MATCH (op6041:Operatiune_Imprumut {id_operatiune: 6041}), (imp6021:Imprumut {id_imprumut: 6021}) CREATE (op6041)-[:OPERATIUNE_PENTRU]->(imp6021);
+MATCH (op6042:Operatiune_Imprumut {id_operatiune: 6042}), (imp6022:Imprumut {id_imprumut: 6022}) CREATE (op6042)-[:OPERATIUNE_PENTRU]->(imp6022);
+MATCH (op6043:Operatiune_Imprumut {id_operatiune: 6043}), (imp6023:Imprumut {id_imprumut: 6023}) CREATE (op6043)-[:OPERATIUNE_PENTRU]->(imp6023);
+MATCH (op6044:Operatiune_Imprumut {id_operatiune: 6044}), (imp6024:Imprumut {id_imprumut: 6024}) CREATE (op6044)-[:OPERATIUNE_PENTRU]->(imp6024);
+MATCH (op6045:Operatiune_Imprumut {id_operatiune: 6045}), (imp6025:Imprumut {id_imprumut: 6025}) CREATE (op6045)-[:OPERATIUNE_PENTRU]->(imp6025);
+MATCH (op6046:Operatiune_Imprumut {id_operatiune: 6046}), (imp6026:Imprumut {id_imprumut: 6026}) CREATE (op6046)-[:OPERATIUNE_PENTRU]->(imp6026);
+MATCH (op6047:Operatiune_Imprumut {id_operatiune: 6047}), (imp6027:Imprumut {id_imprumut: 6027}) CREATE (op6047)-[:OPERATIUNE_PENTRU]->(imp6027);
+MATCH (op6048:Operatiune_Imprumut {id_operatiune: 6048}), (imp6028:Imprumut {id_imprumut: 6028}) CREATE (op6048)-[:OPERATIUNE_PENTRU]->(imp6028);
+MATCH (op6049:Operatiune_Imprumut {id_operatiune: 6049}), (imp6029:Imprumut {id_imprumut: 6029}) CREATE (op6049)-[:OPERATIUNE_PENTRU]->(imp6029);
+MATCH (op6050:Operatiune_Imprumut {id_operatiune: 6050}), (imp6030:Imprumut {id_imprumut: 6030}) CREATE (op6050)-[:OPERATIUNE_PENTRU]->(imp6030);
+
+DETALII_PENTRU (Detalii_Imprumut → Imprumut)
+MATCH (di601:Detalii_Imprumut {id_detaliu: 601}), (imp601:Imprumut {id_imprumut: 601}) CREATE (di601)-[:DETALII_PENTRU]->(imp601);
+MATCH (di602:Detalii_Imprumut {id_detaliu: 602}), (imp602:Imprumut {id_imprumut: 602}) CREATE (di602)-[:DETALII_PENTRU]->(imp602);
+MATCH (di603:Detalii_Imprumut {id_detaliu: 603}), (imp603:Imprumut {id_imprumut: 603}) CREATE (di603)-[:DETALII_PENTRU]->(imp603);
+MATCH (di604:Detalii_Imprumut {id_detaliu: 604}), (imp604:Imprumut {id_imprumut: 604}) CREATE (di604)-[:DETALII_PENTRU]->(imp604);
+MATCH (di605:Detalii_Imprumut {id_detaliu: 605}), (imp605:Imprumut {id_imprumut: 605}) CREATE (di605)-[:DETALII_PENTRU]->(imp605);
+MATCH (di606:Detalii_Imprumut {id_detaliu: 606}), (imp606:Imprumut {id_imprumut: 606}) CREATE (di606)-[:DETALII_PENTRU]->(imp606);
+MATCH (di607:Detalii_Imprumut {id_detaliu: 607}), (imp607:Imprumut {id_imprumut: 607}) CREATE (di607)-[:DETALII_PENTRU]->(imp607);
+MATCH (di608:Detalii_Imprumut {id_detaliu: 608}), (imp608:Imprumut {id_imprumut: 608}) CREATE (di608)-[:DETALII_PENTRU]->(imp608);
+MATCH (di609:Detalii_Imprumut {id_detaliu: 609}), (imp609:Imprumut {id_imprumut: 609}) CREATE (di609)-[:DETALII_PENTRU]->(imp609);
+MATCH (di610:Detalii_Imprumut {id_detaliu: 610}), (imp6010:Imprumut {id_imprumut: 6010}) CREATE (di610)-[:DETALII_PENTRU]->(imp6010);
+MATCH (di611:Detalii_Imprumut {id_detaliu: 611}), (imp6011:Imprumut {id_imprumut: 6011}) CREATE (di611)-[:DETALII_PENTRU]->(imp6011);
+MATCH (di612:Detalii_Imprumut {id_detaliu: 612}), (imp6012:Imprumut {id_imprumut: 6012}) CREATE (di612)-[:DETALII_PENTRU]->(imp6012);
+MATCH (di613:Detalii_Imprumut {id_detaliu: 613}), (imp6013:Imprumut {id_imprumut: 6013}) CREATE (di613)-[:DETALII_PENTRU]->(imp6013);
+MATCH (di614:Detalii_Imprumut {id_detaliu: 614}), (imp6014:Imprumut {id_imprumut: 6014}) CREATE (di614)-[:DETALII_PENTRU]->(imp6014);
+MATCH (di615:Detalii_Imprumut {id_detaliu: 615}), (imp6015:Imprumut {id_imprumut: 6015}) CREATE (di615)-[:DETALII_PENTRU]->(imp6015);
+MATCH (di616:Detalii_Imprumut {id_detaliu: 616}), (imp6016:Imprumut {id_imprumut: 6016}) CREATE (di616)-[:DETALII_PENTRU]->(imp6016);
+MATCH (di617:Detalii_Imprumut {id_detaliu: 617}), (imp6017:Imprumut {id_imprumut: 6017}) CREATE (di617)-[:DETALII_PENTRU]->(imp6017);
+MATCH (di618:Detalii_Imprumut {id_detaliu: 618}), (imp6018:Imprumut {id_imprumut: 6018}) CREATE (di618)-[:DETALII_PENTRU]->(imp6018);
+MATCH (di619:Detalii_Imprumut {id_detaliu: 619}), (imp6019:Imprumut {id_imprumut: 6019}) CREATE (di619)-[:DETALII_PENTRU]->(imp6019);
+MATCH (di620:Detalii_Imprumut {id_detaliu: 620}), (imp6020:Imprumut {id_imprumut: 6020}) CREATE (di620)-[:DETALII_PENTRU]->(imp6020);
+MATCH (di621:Detalii_Imprumut {id_detaliu: 621}), (imp6021:Imprumut {id_imprumut: 6021}) CREATE (di621)-[:DETALII_PENTRU]->(imp6021);
+MATCH (di622:Detalii_Imprumut {id_detaliu: 622}), (imp6022:Imprumut {id_imprumut: 6022}) CREATE (di622)-[:DETALII_PENTRU]->(imp6022);
+MATCH (di623:Detalii_Imprumut {id_detaliu: 623}), (imp6023:Imprumut {id_imprumut: 6023}) CREATE (di623)-[:DETALII_PENTRU]->(imp6023);
+MATCH (di624:Detalii_Imprumut {id_detaliu: 624}), (imp6024:Imprumut {id_imprumut: 6024}) CREATE (di624)-[:DETALII_PENTRU]->(imp6024);
+MATCH (di625:Detalii_Imprumut {id_detaliu: 625}), (imp6025:Imprumut {id_imprumut: 6025}) CREATE (di625)-[:DETALII_PENTRU]->(imp6025);
+MATCH (di626:Detalii_Imprumut {id_detaliu: 626}), (imp6026:Imprumut {id_imprumut: 6026}) CREATE (di626)-[:DETALII_PENTRU]->(imp6026);
+MATCH (di627:Detalii_Imprumut {id_detaliu: 627}), (imp6027:Imprumut {id_imprumut: 6027}) CREATE (di627)-[:DETALII_PENTRU]->(imp6027);
+MATCH (di628:Detalii_Imprumut {id_detaliu: 628}), (imp6028:Imprumut {id_imprumut: 6028}) CREATE (di628)-[:DETALII_PENTRU]->(imp6028);
+MATCH (di629:Detalii_Imprumut {id_detaliu: 629}), (imp6029:Imprumut {id_imprumut: 6029}) CREATE (di629)-[:DETALII_PENTRU]->(imp6029);
+MATCH (di630:Detalii_Imprumut {id_detaliu: 630}), (imp6030:Imprumut {id_imprumut: 6030}) CREATE (di630)-[:DETALII_PENTRU]->(imp6030);
+MATCH (di631:Detalii_Imprumut {id_detaliu: 631}), (imp6031:Imprumut {id_imprumut: 6031}) CREATE (di631)-[:DETALII_PENTRU]->(imp6031);
+MATCH (di632:Detalii_Imprumut {id_detaliu: 632}), (imp6032:Imprumut {id_imprumut: 6032}) CREATE (di632)-[:DETALII_PENTRU]->(imp6032);
+MATCH (di633:Detalii_Imprumut {id_detaliu: 633}), (imp6033:Imprumut {id_imprumut: 6033}) CREATE (di633)-[:DETALII_PENTRU]->(imp6033);
+MATCH (di634:Detalii_Imprumut {id_detaliu: 634}), (imp6034:Imprumut {id_imprumut: 6034}) CREATE (di634)-[:DETALII_PENTRU]->(imp6034);
+MATCH (di635:Detalii_Imprumut {id_detaliu: 635}), (imp6035:Imprumut {id_imprumut: 6035}) CREATE (di635)-[:DETALII_PENTRU]->(imp6035);
+MATCH (di636:Detalii_Imprumut {id_detaliu: 636}), (imp6036:Imprumut {id_imprumut: 6036}) CREATE (di636)-[:DETALII_PENTRU]->(imp6036);
+MATCH (di637:Detalii_Imprumut {id_detaliu: 637}), (imp6037:Imprumut {id_imprumut: 6037}) CREATE (di637)-[:DETALII_PENTRU]->(imp6037);
+MATCH (di638:Detalii_Imprumut {id_detaliu: 638}), (imp6038:Imprumut {id_imprumut: 6038}) CREATE (di638)-[:DETALII_PENTRU]->(imp6038);
+MATCH (di639:Detalii_Imprumut {id_detaliu: 639}), (imp6039:Imprumut {id_imprumut: 6039}) CREATE (di639)-[:DETALII_PENTRU]->(imp6039);
+MATCH (di640:Detalii_Imprumut {id_detaliu: 640}), (imp6040:Imprumut {id_imprumut: 6040}) CREATE (di640)-[:DETALII_PENTRU]->(imp6040);
+MATCH (di641:Detalii_Imprumut {id_detaliu: 641}), (imp6041:Imprumut {id_imprumut: 6041}) CREATE (di641)-[:DETALII_PENTRU]->(imp6041);
+MATCH (di642:Detalii_Imprumut {id_detaliu: 642}), (imp6042:Imprumut {id_imprumut: 6042}) CREATE (di642)-[:DETALII_PENTRU]->(imp6042);
+MATCH (di643:Detalii_Imprumut {id_detaliu: 643}), (imp6043:Imprumut {id_imprumut: 6043}) CREATE (di643)-[:DETALII_PENTRU]->(imp6043);
+MATCH (di644:Detalii_Imprumut {id_detaliu: 644}), (imp6044:Imprumut {id_imprumut: 6044}) CREATE (di644)-[:DETALII_PENTRU]->(imp6044);
+MATCH (di645:Detalii_Imprumut {id_detaliu: 645}), (imp6045:Imprumut {id_imprumut: 6045}) CREATE (di645)-[:DETALII_PENTRU]->(imp6045);
+MATCH (di646:Detalii_Imprumut {id_detaliu: 646}), (imp6046:Imprumut {id_imprumut: 6046}) CREATE (di646)-[:DETALII_PENTRU]->(imp6046);
+MATCH (di647:Detalii_Imprumut {id_detaliu: 647}), (imp6047:Imprumut {id_imprumut: 6047}) CREATE (di647)-[:DETALII_PENTRU]->(imp6047);
+MATCH (di648:Detalii_Imprumut {id_detaliu: 648}), (imp6048:Imprumut {id_imprumut: 6048}) CREATE (di648)-[:DETALII_PENTRU]->(imp6048);
+MATCH (di649:Detalii_Imprumut {id_detaliu: 649}), (imp6049:Imprumut {id_imprumut: 6049}) CREATE (di649)-[:DETALII_PENTRU]->(imp6049);
+MATCH (di650:Detalii_Imprumut {id_detaliu: 650}), (imp6050:Imprumut {id_imprumut: 6050}) CREATE (di650)-[:DETALII_PENTRU]->(imp6050);
+
+Crearea array-urilor pe nodul (Carte_Afectata: detalii_afectare și note_afectare)
+
+MATCH (ca:Carte_Afectata)
+WHERE ca.id_carte_afe = 101
+SET ca.detalii_afectare = ["deteriorata", "murdara"];
+
+MATCH (ca:Carte_Afectata)
+WHERE ca.id_carte_afe = 102
+SET ca.detalii_afectare = ["deteriorata"];
+
+MATCH (ca:Carte_Afectata)
+WHERE ca.id_carte_afe = 103
+SET ca.detalii_afectare = ["deteriorata", "patata"];
+
+MATCH (ca:Carte_Afectata)
+WHERE ca.id_carte_afe = 104
+SET ca.detalii_afectare = ["pierduta"];
+
+MATCH (ca:Carte_Afectata)
+WHERE ca.id_carte_afe = 105
+SET ca.detalii_afectare = ["deteriorata", "zgariata"];
+
+
+
+MATCH (ca:Carte_Afectata)
+WHERE ca.id_carte_afe = 101
+SET ca.note_afectare = ["sever", "reparabilă"];
+
+MATCH (ca:Carte_Afectata)
+WHERE ca.id_carte_afe = 102
+SET ca.note_afectare = ["minor", "observată"];
+
+MATCH (ca:Carte_Afectata)
+WHERE ca.id_carte_afe = 103
+SET ca.note_afectare = ["moderată", "necesită revizuire"];
+
+MATCH (ca:Carte_Afectata)
+WHERE ca.id_carte_afe = 104
+SET ca.note_afectare = ["pierdută", "irecuperabilă"];
+
+MATCH (ca:Carte_Afectata)
+WHERE ca.id_carte_afe = 105
+SET ca.note_afectare = ["uşoară", "reparabilă"];
+
+
+
+2. Crearea array-urilor pe relații (AFECTAT- observatii)
+
+UNWIND [
+  {id_cititor: 8011, id_carte_afe: 101, obs: ["umiditate", "uzură"]},
+  {id_cititor: 8012, id_carte_afe: 101, obs: ["umiditate", "uzură"]},
+  {id_cititor: 8013, id_carte_afe: 101, obs: ["umiditate", "uzură"]},
+  {id_cititor: 8014, id_carte_afe: 102, obs: ["scris manual", "uzură"]},
+  {id_cititor: 8015, id_carte_afe: 102, obs: ["scris manual", "uzură"]},
+  {id_cititor: 8016, id_carte_afe: 102, obs: ["scris manual", "uzură"]},
+  {id_cititor: 8017, id_carte_afe: 103, obs: ["rupere", "pată"]},
+  {id_cititor: 8018, id_carte_afe: 103, obs: ["rupere", "pată"]},
+  {id_cititor: 8019, id_carte_afe: 103, obs: ["rupere", "pată"]},
+  {id_cititor: 8020, id_carte_afe: 104, obs: ["lipsă totală"]},
+  {id_cititor: 8021, id_carte_afe: 104, obs: ["lipsă totală"]},
+  {id_cititor: 8022, id_carte_afe: 104, obs: ["lipsă totală"]},
+  {id_cititor: 8023, id_carte_afe: 105, obs: ["zgârietură", "uzură"]},
+  {id_cititor: 8024, id_carte_afe: 105, obs: ["zgârietură", "uzură"]},
+  {id_cititor: 8025, id_carte_afe: 105, obs: ["zgârietură", "uzură"]}
+] AS data
+MATCH (c:Cititor {id_cititor: data.id_cititor})
+MATCH (ca:Carte_Afectata {id_carte_afe: data.id_carte_afe})
+MERGE (c)-[r:AFECTAT]->(ca)
+SET r.observatii = data.obs;

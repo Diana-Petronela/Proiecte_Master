@@ -1,0 +1,124 @@
+//1. Totalul cartilor imprumutate si calcularea penalizarilor totale pt fiecare cititor
+
+db.cititori.aggregate([
+    // Calculăm totalul penalizărilor și al cărților împrumutate
+    {
+        $addFields: {
+            total_penalizari: {
+                $sum: {
+                    $map: {
+                        input: { $ifNull: ["$penalizari", []] }, // Verificăm dacă există penalizări
+                        as: "penalizare",
+                        in: { $ifNull: ["$$penalizare.valoare_penalizare", 0] } // Calculăm suma valorilor penalizărilor
+                    }
+                }
+            },
+            total_carti_imprumutate: {
+                $ifNull: ["$nr_carti_imprumutate_curent", 0] // Înlocuim null cu 0 dacă câmpul lipsește
+            }
+        }
+    },
+    // Selectăm doar câmpurile relevante
+    {
+        $project: {
+            _id: 0,
+            id_cititor: "$_id",
+            nume_cititor: "$nume",
+            total_penalizari: 1,
+            total_carti_imprumutate: 1
+        }
+    },
+    // Sortăm descrescător după totalul penalizărilor
+    {
+        $sort: { total_penalizari: -1 }
+    }
+]);
+
+//2. Afiseaza editurile care au publicat cele mai multe cărți și media totală a ratingurilor acestora
+
+db.edituri.aggregate([
+    {
+        $lookup: {
+            from: "carti",                // Colecția "carti"
+            localField: "_id",            // Câmpul din colecția "edituri"
+            foreignField: "id_editura",   // Câmpul din colecția "carti"
+            as: "carti_publicate"         // Numele array-ului rezultat
+        }
+    },
+    {
+        $addFields: {
+            numar_carti_publicate: { $size: "$carti_publicate" },  // Numărăm cărțile publicate
+            media_ratinguri: {
+                $cond: [
+                    { $gt: [{ $size: "$carti_publicate" }, 0] },   // Dacă există cărți publicate
+                    { $avg: "$carti_publicate.rating_carte" },    // Calculăm media ratingurilor
+                    0                                              // Altfel, media este 0
+                ]
+            }
+        }
+    },
+    {
+        $project: {
+            _id: 0,                        // Excludem ID-ul MongoDB implicit
+            id_editura: "$_id",            // ID-ul editurii
+            nume_editura: "$nume",         // Numele editurii
+            numar_carti_publicate: 1,
+            media_ratinguri: 1
+        }
+    },
+    {
+        $sort: { numar_carti_publicate: -1, media_ratinguri: -1 }  // Sortare descrescătoare
+    }
+]);
+
+//3. Afișează numărul de cărți afectate și cel mai frecvent tip de afectare pentru fiecare cititor
+
+db.carti_afectate.aggregate([
+    {
+        $lookup: {
+            from: "cititori",
+            localField: "id_cititor",
+            foreignField: "_id",
+            as: "cititor"
+        }
+    },
+    { $unwind: "$cititor" },
+    {
+        $group: {
+            _id: "$id_cititor",
+            numar_carti_afectate: { $sum: 1 },
+            tip_afectare_frecvent: { $first: "$tip_afectare" },
+            nume_cititor: { $first: "$cititor.nume" }
+        }
+    },
+    {
+        $project: {
+            _id: 0,
+            nume_cititor: 1,
+            numar_carti_afectate: 1,
+            tip_afectare_frecvent: 1
+        }
+    },
+    { $sort: { numar_carti_afectate: -1 } }
+]).pretty();
+
+//4. Distribuția angajaților și analiza salariilor pe funcții
+
+db.angajati.aggregate([
+    {
+        $group: {
+            _id: "$functie", // Grupăm angajații după funcție
+            numar_angajati: { $sum: 1 }, // Numărăm angajații din fiecare funcție
+            salariu_mediu: { $avg: "$salariu" }, // Calculăm salariul mediu
+            angajati: { // Creăm o listă cu numele și salariul fiecărui angajat
+                $push: {
+                    nume: "$nume",
+                    salariu: "$salariu"
+                }
+            }
+        }
+    },
+    {
+        $sort: { numar_angajati: -1 } // Sortăm descrescător după numărul de angajați
+    }
+]).pretty();
